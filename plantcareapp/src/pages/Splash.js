@@ -31,7 +31,7 @@ const Splash = () => {
     <div className="container">
       <div className='content'>
         <img src={Logo} alt='' width={250} />
-        <h1>Botania</h1>
+        <h1 className='splashh1'>Botania</h1>
         {customerLink ? (
           <Link to='./SignUp'><button className="CustomerButton" onClick={handleCustomerClick}>{customerText}</button></Link>
         ) : (
