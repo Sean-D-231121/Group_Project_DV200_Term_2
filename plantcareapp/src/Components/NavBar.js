@@ -3,6 +3,10 @@ import SideNav, { Toggle, NavItem, NavText } from '@trendmicro/react-sidenav';
 import { useNavigate } from 'react-router-dom';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import LogoSmall from './Logosmall.png'; 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 function MySideNav() {
     const navigate = useNavigate();
 
@@ -39,4 +43,7 @@ function MySideNav() {
 }
 
 export default MySideNav;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes

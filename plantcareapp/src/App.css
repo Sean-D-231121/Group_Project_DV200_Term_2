@@ -7,17 +7,18 @@ body{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family: lemon;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mysidenav {
+  text-align: center;
+  background-color: #B9F9B8 !important; /* Change background color to green */
+  font-weight: 500;
+  height: 3700px;
 }
 
+<<<<<<< Updated upstream
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -47,4 +48,9 @@ body{
   to {
     transform: rotate(360deg);
   }
+=======
+.page {
+  font-size: 5rem;
+  text-align: center;
+>>>>>>> Stashed changes
 }
