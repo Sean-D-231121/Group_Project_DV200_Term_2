@@ -15,7 +15,6 @@ function App() {
     <div className="App">
       <div className="App">
         <Router>
-          <Splash />
           <Routes>
             <Route path="/" element={<Splash />} />
             <Route path="/SignIn" element={<SignIn />} />
