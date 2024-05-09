@@ -7,15 +7,15 @@ body{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family: lemon;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mysidenav {
+  text-align: center;
+  background-color: #B9F9B8 !important; /* Change background color to green */
+  font-weight: 500;
+  height: 3700px;
 }
 
 .App-header {
@@ -38,13 +38,4 @@ body{
   background-color: #B9F9B8 !important; /* Change background color to green */
   font-weight: 500;
   height: 3700px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
