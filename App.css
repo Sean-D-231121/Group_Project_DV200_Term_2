@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.mysidenav {
+  text-align: center;
+  background-color: #B9F9B8 !important; /* Change background color to green */
+  font-weight: 500;
+  height: 3700px;
+}
+
+.page {
+  font-size: 5rem;
+  text-align: center;
+}
