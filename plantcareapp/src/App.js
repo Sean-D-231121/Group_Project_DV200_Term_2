@@ -7,7 +7,6 @@ import ProductsPage from './pages/ProductsPage';
 import Home from './pages/Home';
 import Appointments from './pages/Appointments';
 import Settings from './pages/Settings';
-import Splash from './pages/Splash';
 
 
 function App() {
@@ -15,9 +14,9 @@ function App() {
     <div className="App">
       <div className="App">
         <Router>
-          <Splash />
+          
           <Routes>
-            <Route path="/" element={<Splash />} />
+            <Route path="/" element={<ProductsPage/>} />
             <Route path="/SignIn" element={<SignIn />} />
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/Home" element={<Home />} />

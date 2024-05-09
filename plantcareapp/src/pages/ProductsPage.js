@@ -1,4 +1,4 @@
-
+import './productspage.css'
 const ProductsPage = () => {
 
     return (
@@ -8,8 +8,8 @@ const ProductsPage = () => {
           <div className="col-4">
             <button>My Cart</button>
           </div>
-          <div className="d-flex ">
-            <div className="row">
+          
+            <div className="col-3 gap-2">
               <label for="exampleFormControlInput1" class="form-label">
                 Filter
               </label>
@@ -20,8 +20,18 @@ const ProductsPage = () => {
                 placeholder="Text"
               />
             </div>
+            <div className="col-3 gap-2">
+              <label for="exampleFormControlInput1" class="form-label">
+                Filter
+              </label>
+              <input
+                type="Text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Search"
+              />
+            </div>
           </div>
-        </div>
       </div>
     );
 }
