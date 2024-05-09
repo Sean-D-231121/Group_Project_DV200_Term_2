@@ -1,0 +1,93 @@
+.aptMain {
+  height: 100vh;
+  overflow: auto;
+  background-color: white;
+}
+
+/* -------------------------------------- */
+/* Current Appointments */
+.aptAppointmentContainer {
+  margin-bottom: 80px;
+}
+
+.aptAppointmentContainerAppointments {
+  width: 650px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.aptAppointmentItem {
+  padding-top: 20px;
+  padding-bottom: 11px;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  background-color: #ffaaf1;
+}
+
+/* -------------------------------------- */
+/* Create appointment frame */
+.aptCreateAppointmentFrame {
+  margin: 0 auto;
+  width: 650px;
+  background-color: #dffede;
+  border-radius: 25px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 50px;
+}
+
+.aptCreateAppCont {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Left side: Plant details */
+.aptCreateAppPlantDetailsPhoto {
+  width: 200px;
+  height: 200px;
+  border: 2px solid #000000;
+  border-radius: 100px;
+  background-color: white;
+}
+
+.aptSelectPlantType {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid #000000;
+  border-radius: 25px;
+}
+
+/* Right side: Date details */
+.aptCreateAppDateSelectsDate {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  order: 1px solid #000000;
+  border-radius: 25px;
+}
+
+/* FFAAF1 */
+
+.aptCreateAppDateButton {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  order: 1px solid #000000;
+  background-color: #ffaaf1;
+  border-radius: 25px;
+}
+
+/* -------------------------------------- */
