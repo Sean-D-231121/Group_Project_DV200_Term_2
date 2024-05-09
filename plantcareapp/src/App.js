@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignIn from './pages/SignIn';
@@ -8,11 +7,15 @@ import ProductsPage from './pages/ProductsPage';
 import Home from './pages/Home';
 import Appointments from './pages/Appointments';
 import Settings from './pages/Settings';
+import Splash from './pages/Splash';
+
+
 function App() {
   return (
     <div className="App">
       <div className="App">
         <Router>
+        <Splash />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/SignUp" element={<SignUp />} />
