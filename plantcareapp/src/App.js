@@ -1,14 +1,13 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
-import PlantLibrary from './pages/PlantLibrary';
-import ProductsPage from './pages/ProductsPage';
-import Home from './pages/Home';
-import Appointments from './pages/Appointments';
-import Settings from './pages/Settings';
-import Splash from './pages/Splash';
-
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import PlantLibrary from "./pages/PlantLibrary";
+import ProductsPage from "./pages/ProductsPage";
+import Home from "./pages/Home";
+import Appointments from "./pages/Appointments";
+import Settings from "./pages/Settings";
+import Splash from "./pages/Splash";
 
 function App() {
   return (
