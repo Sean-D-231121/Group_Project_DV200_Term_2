@@ -103,3 +103,20 @@ body{
     text-decoration: none;
     color: black;
 }
+
+.signupblock2 {
+    width: 40vh;
+    height: 45vh;
+    margin: auto;
+    margin-top: 15vh;
+    background-color: #76EA73;
+    border-radius: 5vh;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.signimage2{
+    position: absolute;
+    margin-left: 130px;
+    margin-top: 10vh;
+    
+}
