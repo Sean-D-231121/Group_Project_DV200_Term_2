@@ -2,7 +2,7 @@ import React from 'react';
 import SideNav, { Toggle, NavItem, NavText } from '@trendmicro/react-sidenav';
 import { useNavigate } from 'react-router-dom';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import LogoSmall from './Logosmall.png'; // Import the image
+import LogoSmall from './Logosmall.png'; 
 
 function MySideNav() {
     const navigate = useNavigate();
