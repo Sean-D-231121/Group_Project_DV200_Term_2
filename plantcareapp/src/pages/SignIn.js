@@ -1,8 +1,10 @@
+import Sidebar from "../Components/Sidebar"
+
 const SignIn = () =>{
 
     return(
         <div>
-
+            
         </div>
     )
 
