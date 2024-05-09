@@ -17,7 +17,7 @@ function App() {
         <Router>
         <Splash />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<SignIn/>} />
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/Home" element={<SignIn />} />
             <Route path="/PlantLibrary" element={<PlantLibrary />} />
