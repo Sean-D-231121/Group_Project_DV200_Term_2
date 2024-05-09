@@ -21,7 +21,7 @@ const SignIn = () =>{
                     <input className='signupinput'></input>
                 </div>
         
-                <Link to='./Home'><button className='signupbutton'>Sign In</button></Link>
+                <Link to='../Home'><button className='signupbutton'>Sign In</button></Link>
             </div>
         </div>
     )

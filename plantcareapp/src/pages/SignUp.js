@@ -31,7 +31,7 @@ const SignUp = () =>{
                     <p className='signuptext'>Confirm Password</p>
                     <input className='signupinput'></input>
                 </div>
-                <Link to='./Home'><button className='signupbutton'>Sign Up</button></Link>
+                <Link to='../Home'><button className='signupbutton'>Sign Up</button></Link>
             </div>
         </div>
     )
