@@ -15,11 +15,12 @@ function App() {
     <div className="App">
       <div className="App">
         <Router>
-        <Splash />
+          <Splash />
           <Routes>
-            <Route path="/" element={<SignIn/>} />
+            <Route path="/" element={<Splash />} />
+            <Route path="/SignIn" element={<SignIn />} />
             <Route path="/SignUp" element={<SignUp />} />
-            <Route path="/Home" element={<SignIn />} />
+            <Route path="/Home" element={<Home />} />
             <Route path="/PlantLibrary" element={<PlantLibrary />} />
             <Route path="/ProductsPage" element={<ProductsPage />} />
             <Route path="/Appointments" element={<Appointments />} />
