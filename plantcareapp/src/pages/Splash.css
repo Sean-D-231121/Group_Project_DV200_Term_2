@@ -1,3 +1,6 @@
+body{
+    background-color: #DFFEDE;
+}
 .container {
     display: flex;
     align-items: center;
@@ -7,7 +10,7 @@
     margin-top: 10%;
   }
 
-h1 {
+.splashh1 {
     font-size: 7vh;
 }
 
@@ -31,4 +34,89 @@ h1 {
     border-radius: 1vh;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
     font-size: 3vh;
+}
+
+.signuph1 {
+    margin-top: 5vh;
+    font-size: 7vh;
+}
+
+.signh1{
+    padding-top: 2vh;
+    padding-bottom: 4vh;
+}
+
+.signupblock {
+    width: 40vh;
+    height: 70vh;
+    margin: auto;
+    margin-top: 5vh;
+    background-color: #76EA73;
+    border-radius: 5vh;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.signupinput{
+    margin-top: -1vh;
+    border-radius: 5vh;
+    border: transparent;
+    width: 30vh;
+    height: 3vh;
+    padding: 2vh;
+}
+
+.signuptext{
+    float: left;
+    padding: 0;
+    
+}
+
+.signupdiv1{
+    margin: auto;
+    margin-top: 2vh;
+    width: 30vh;
+}
+
+.signupbutton{
+    font-family: lemon;
+    margin-top: 4vh;
+    background-color: #FFAAF1;
+    border: transparent;
+    padding: 1vh;
+    border-radius: 1vh;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    font-size: 3vh;
+}
+
+.signimage{
+    position: absolute;
+    margin-left: 130px;
+    
+}
+
+.arrow{
+    position: absolute;
+    font-size: 20vh;
+    font-weight: bold;
+    margin-left: 40vh;
+    margin-top: 30vh;
+    text-decoration: none;
+    color: black;
+}
+
+.signupblock2 {
+    width: 40vh;
+    height: 45vh;
+    margin: auto;
+    margin-top: 15vh;
+    background-color: #76EA73;
+    border-radius: 5vh;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.signimage2{
+    position: absolute;
+    margin-left: 130px;
+    margin-top: 10vh;
+    
 }

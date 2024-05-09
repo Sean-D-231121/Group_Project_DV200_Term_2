@@ -1,5 +1,5 @@
 body{
-  background-color: #DFFEDE;
+ 
   font-family: lemon;
 }
 
@@ -31,6 +31,13 @@ body{
 
 .App-link {
   color: #61dafb;
+}
+
+.mysidenav {
+  text-align: center;
+  background-color: #B9F9B8 !important; /* Change background color to green */
+  font-weight: 500;
+  height: 3700px;
 }
 
 @keyframes App-logo-spin {
