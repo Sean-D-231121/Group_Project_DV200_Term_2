@@ -1,4 +1,4 @@
-import './App.css';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -8,6 +8,9 @@ import Home from './pages/Home';
 import Appointments from './pages/Appointments';
 import Settings from './pages/Settings';
 
+import NavBar from './Components/NavBar'; 
+import Splash from './pages/Splash';
+import './App.css';
 
 function App() {
   return (
