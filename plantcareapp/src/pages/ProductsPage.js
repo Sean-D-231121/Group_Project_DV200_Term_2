@@ -3,6 +3,7 @@ import prodOne from "../Images/product-1.png"
 const ProductsPage = () => {
   return (
     <div className="container ml-5">
+      
       <div className="col-8">
         <h3>Store </h3>
         <div className="row mt-3 ">
@@ -32,7 +33,7 @@ const ProductsPage = () => {
             />
           </div>
         </div>
-        <div className="row ">
+        <div className="row gap-2">
           <div className="card ml-3" style={{ width: "18rem" }}>
             <img
               className="images-circular"
