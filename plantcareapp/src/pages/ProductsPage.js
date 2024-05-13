@@ -1,8 +1,11 @@
+import MySideNav from '../Components/NavBar';
 
 const ProductsPage = () => {
 
     return (
+      
       <div className="container">
+        <MySideNav />
         <div className="col-12"> Store </div>
         <div className="row mt-3">
           <div className="col-4">
