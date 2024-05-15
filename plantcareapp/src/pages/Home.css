@@ -31,14 +31,14 @@
 
 .card p {
     text-align: center;
-    font-size: 12px; /* Default font size */
+    font-size: 12px; 
 }
 
 .update-button {
     background-color: #FFAAF1;
     border: none;
-    color: black; /* Change text color to black */
-    padding: 8px 16px; /* Make the button a bit smaller */
+    color: black; 
+    padding: 8px 16px; 
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -46,25 +46,25 @@
     margin-top: 10px;
     cursor: pointer;
     border-radius: 25px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add drop shadow */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, box-shadow 0.3s; 
 }
 
 .update-button:hover {
-    background-color: #E599DA; /* Slightly darker shade for hover */
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Slightly bigger shadow for hover */
+    background-color: #E599DA; 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .update-button:active {
-    background-color: #D489C2; /* Even darker shade for active state */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow for active state */
+    background-color: #D489C2; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .appointment-button {
     background-color: #FFAAF1;
     border: none;
-    color: black; /* Change text color to black */
-    padding: 8px 16px; /* Make the button a bit smaller */
+    color: black; 
+    padding: 8px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -72,17 +72,17 @@
     margin-top: 10px;
     cursor: pointer;
     border-radius: 25px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add drop shadow */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
-    margin-right: 10px; /* Add margin to separate buttons */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    margin-right: 10px; 
 }
 
 .appointment-button:hover {
-    background-color: #E599DA; /* Slightly darker shade for hover */
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Slightly bigger shadow for hover */
+    background-color: #E599DA; 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .appointment-button:active {
-    background-color: #D489C2; /* Even darker shade for active state */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow for active state */
+    background-color: #D489C2; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
 }
