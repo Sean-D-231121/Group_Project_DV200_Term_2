@@ -8,7 +8,6 @@ import Home from './pages/Home';
 import Appointments from './pages/Appointments';
 import Settings from './pages/Settings'; 
 import Splash from './pages/Splash';
-import Settings from './pages/Settings';
 import './App.css';
 
 function App() {
@@ -18,9 +17,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Splash />} />
           <Route path="/SignIn" element={<SignIn />} />
-         
-        <Routes>
-          <Route path="/" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/PlantLibrary" element={<PlantLibrary />} />
@@ -34,4 +30,3 @@ function App() {
 }
 
 export default App;
-
