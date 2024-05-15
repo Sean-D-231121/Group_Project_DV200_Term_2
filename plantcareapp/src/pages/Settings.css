@@ -1,0 +1,63 @@
+.settings-container {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.user-photo {
+    margin-right: -40px;
+    width: 12%;
+    margin-bottom: 20px; /* Add margin bottom to space the image from other elements */
+}
+
+.profile-info {
+    margin: 0 auto; /* Center align the profile info */
+    max-width: 400px; /* Set maximum width for better readability */
+}
+
+.text-box-container {
+    margin-bottom: 10px;
+    text-align: center; /* Align text boxes to the center within the container */
+}
+
+.text-box-container input {
+    border: 1px solid #72A177;
+    border-radius: 25px;
+    padding: 8px;
+    text-align: center;
+    width: 200px; /* Adjust the width of the text boxes */
+    box-sizing: border-box;
+    margin: 0 auto; /* Center align the text boxes */
+}
+
+.save-button {
+    background-color: #FFAAF1;
+    border: none;
+    color: black; /* Change text color to black */
+    padding: 8px 16px; /* Make the button a bit smaller */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add drop shadow */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+}
+
+.save-button:hover {
+    background-color: #E599DA; /* Slightly darker shade for hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Slightly bigger shadow for hover */
+}
+
+.save-button:active {
+    background-color: #D489C2; /* Even darker shade for active state */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow for active state */
+}
+
+.edit-icon {
+    margin-top: 90px; 
+    margin-left: -2%;
+}
+
