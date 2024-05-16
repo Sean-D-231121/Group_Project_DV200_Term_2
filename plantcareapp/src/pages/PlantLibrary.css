@@ -1,0 +1,77 @@
+.plMain {
+  height: 100vh;
+  overflow: auto;
+  background-color: white;
+}
+
+.plLibrarySpace {
+  width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.plLibraryAddPlamtBTN {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  order: 1px solid #000000;
+  background-color: #ffaaf1;
+  border-radius: 25px;
+  margin-left: 800px;
+  margin-bottom: 60px;
+}
+
+.plLibraryContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Plant Library Card CSS - PlantLibraryObject */
+.plObjectMain {
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #dffede;
+  border-radius: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.plObjectCloseBTN {
+  padding-top: -5px;
+  padding-bottom: -5px;
+  padding-left: 9px;
+  padding-right: 9px;
+  order: 1px solid #000000;
+  background-color: #ffaaf1;
+  border-radius: 25px;
+  margin-left: 223px;
+}
+
+.plObjectImage {
+  width: 200px;
+  height: 200px;
+  border: 2px solid #000000;
+  border-radius: 100px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.plObjectViewPlantHisBTN {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  order: 1px solid #000000;
+  background-color: #ffaaf1;
+  border-radius: 25px;
+}
