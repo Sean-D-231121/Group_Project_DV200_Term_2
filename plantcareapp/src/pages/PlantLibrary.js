@@ -1,4 +1,4 @@
-import "./PlantLibrary.css";
+import './PlantLibrary.css'
 import NavBar from "../Components/NavBar";
 
 const PlantLibraryObject = ({
