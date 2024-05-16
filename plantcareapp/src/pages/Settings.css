@@ -1,0 +1,63 @@
+.settings-container {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.user-photo {
+    margin-right: -40px;
+    width: 12%;
+    margin-bottom: 20px; 
+}
+
+.profile-info {
+    margin: 0 auto; 
+    max-width: 400px; 
+}
+
+.text-box-container {
+    margin-bottom: 10px;
+    text-align: center; 
+}
+
+.text-box-container input {
+    border: 1px solid #72A177;
+    border-radius: 25px;
+    padding: 8px;
+    text-align: center;
+    width: 200px; 
+    box-sizing: border-box;
+    margin: 0 auto; 
+}
+
+.save-button {
+    background-color: #FFAAF1;
+    border: none;
+    color: black; 
+    padding: 8px 16px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+.save-button:hover {
+    background-color: #E599DA; 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.save-button:active {
+    background-color: #D489C2; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.edit-icon {
+    margin-top: 90px; 
+    margin-left: -2%;
+}
+

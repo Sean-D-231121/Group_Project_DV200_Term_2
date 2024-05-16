@@ -3,7 +3,6 @@ import SideNav, { Toggle, NavItem, NavText } from "@trendmicro/react-sidenav";
 import { useNavigate } from "react-router-dom";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import LogoSmall from "./Logosmall.png";
-
 function MySideNav() {
   const navigate = useNavigate();
 
@@ -49,6 +48,11 @@ function MySideNav() {
         <NavItem eventKey="ProductsPage">
           <NavText>
             <span style={{ color: "black" }}>Products Page</span>
+          </NavText>
+        </NavItem>
+        <NavItem eventKey="Cart">
+          <NavText>
+            <span style={{ color: "black" }}>Cart</span>
           </NavText>
         </NavItem>
         <NavItem eventKey="Appointments">
