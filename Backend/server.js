@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log('MongoDB is connected'))
 .catch(err => console.log(err));
 
-const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./Routes/UserRoutes');
 app.use('/api/users', userRoutes);
 
 app.listen(PORT, () => {
