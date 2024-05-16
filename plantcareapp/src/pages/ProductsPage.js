@@ -68,7 +68,7 @@ const ProductsPage = () => {
           </div>
           <div className="d-flex justify-content-center gap-5 mt-5 ml-5">
              {products.map((product) => (
-              <div className="card ml-3" style={{ width: "18rem" }} key={product.id}>
+              <div className="card ms-3 mt-5" style={{ width: "18rem",  height: "30rem"}} key={product.id}>
                 <img
                   className="images-circular card-img-top"
                   src={product.image}

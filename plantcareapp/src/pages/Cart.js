@@ -58,7 +58,7 @@ const Cart = () => {
                   key={cartItem.id}
                 >
                   <div className="row g-0">
-                    <div className="col-md-1 ms-2 mt-3">
+                    <div className="col-md-2 ms-2 mt-3">
                       <img
                         src={cartItem.image}
                         className="img-fluid rounded-start"
