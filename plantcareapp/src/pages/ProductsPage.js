@@ -6,9 +6,9 @@ const ProductsPage = () => {
     const [products, setProducts] = useState([
       {
         id: 1,
-        name: "Organic fertiliser",
-        description: "High quality fertiliser, perfect for many plants",
-        image: require("../Images/Product-1.png"),
+        name: "Colour Booster",
+        description: "Plant food formulated for macro and micro nutrients",
+        image: require("../Images/Product-3.png"),
         rating: 3,
         price: "R70, 00",
         carted: false,
