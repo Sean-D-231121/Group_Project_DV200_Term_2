@@ -6,8 +6,9 @@ import PlantLibrary from './pages/PlantLibrary';
 import ProductsPage from './pages/ProductsPage';
 import Home from './pages/Home';
 import Appointments from './pages/Appointments';
-import Settings from './pages/Settings'; 
-import Splash from './pages/Splash';
+import Settings from './pages/Settings';
+import Cart from './pages/Cart';
+import Splash from './pages/Splash.js'
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/PlantLibrary" element={<PlantLibrary />} />
           <Route path="/ProductsPage" element={<ProductsPage />} />
+          <Route path="/Cart" element={<Cart/>} />
           <Route path="/Appointments" element={<Appointments />} />
           <Route path="/Settings" element={<Settings />} />
         </Routes>
