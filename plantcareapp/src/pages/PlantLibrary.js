@@ -1,4 +1,5 @@
-import './PlantLibrary.css'
+import "./PlantLibrary.css";
+import "./Global.css";
 import NavBar from "../Components/NavBar";
 
 const PlantLibraryObject = ({
@@ -22,7 +23,7 @@ const PlantLibrary = () => {
   return (
     <div>
       <NavBar />
-      <div className="plMain">
+      <div className="webpage-frame" style={{ backgroundColor: "white" }}>
         <h2 style={{ marginTop: "40px", marginBottom: "40px" }}>
           Plants Library
         </h2>
