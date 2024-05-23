@@ -10,8 +10,8 @@ const PlantLibraryObject = ({
     <div className="plObjectMain">
       <button className="plObjectCloseBTN">-</button>
       <div className="plObjectImage"></div>
-      <h6>Plant name</h6>
-      <p>Plant description</p>
+      <h6>{PlantName}</h6>
+      <p>{PlantDescription}</p>
       <button className="plObjectViewPlantHisBTN">Plant history</button>
     </div>
   );
