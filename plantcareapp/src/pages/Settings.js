@@ -55,7 +55,7 @@ const Settings = () => {
                     </div>
                     <br />
                     <h5>Email:</h5>
-                    <p>@marinathompson123</p>
+                    <p>marinathompson123@gmail.com</p>
                     <div className="text-box-container">
                         <input
                             type="text"
