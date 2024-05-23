@@ -4,10 +4,10 @@ const User = require('../Models/User'); // Ensure the path to the User model is 
 
 // Create new user
 router.post('/register', async (req, res) => {
-    const { name, email, password } = req.body;
+    const {username, name, email, password } = req.body;
 
     try {
-        const user = new User({ name, email, password });
+        const user = new User({ username, name, email, password });
         await user.save();
         res.status(201).json(user);
     } catch (err) {
@@ -23,6 +23,20 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(400).json({ error: err.message });
     }
+});
+// Sign in
+router.post('/signin', async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const user = await User.findOne({ username, password });
+    if (user) {
+      res.status(200).send({ message: "Sign in successful" });
+    } else {
+      res.status(401).send({ message: "Invalid credentials" });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 module.exports = router;

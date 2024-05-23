@@ -35,48 +35,40 @@ const Appointments = () => {
         <div className="aptCreateAppointmentFrame">
           <h4>Create Appointments</h4>
           <div className="aptCreateAppCont">
-            {/* Left side: Plant details */}
-            <div className="aptCreateAppPlantDetails">
-              <form action="">
+            {/* Form Appointment */}
+            <form action="" className="aptForm">
+              {/* Select plant photo */}
+              <div className="form-group" style={{ marginBottom: "30px" }}>
                 <p>Photo of the plant</p>
                 <div className="aptCreateAppPlantDetailsPhoto"></div>
+              </div>
 
-                <p
-                  style={{
-                    marginTop: "40px",
-                    marginBottom: "5px",
-                    textAlign: "left",
-                  }}
-                >
-                  Plant type
-                </p>
-                {/* Select input for plant type */}
-                <select
-                  className="form-control aptSelectPlantType"
-                  id="plantTypeSelect"
-                  name="plantType"
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
+              {/* Input plant name */}
+              <div className="form-group" style={{ marginBottom: "30px" }}>
+                <p>Plant name</p>
+                <input
+                  type="text"
+                  className="aptCreateAppDateSelectsDate"
+                  name="plantName"
+                  placeholder="Enter your name"
+                />
+              </div>
 
-                {/* Date input for appointment */}
+              {/* Input appointment date */}
+              <div className="form-group" style={{ marginBottom: "50px" }}>
                 <p>Choose date for appointment</p>
                 <input
                   type="date"
                   className="aptCreateAppDateSelectsDate"
                   name="appointmentDate"
                 />
+              </div>
 
-                {/* Submit button */}
-                <button type="submit" className="aptCreateAppDateButton">
-                  Create Appointment
-                </button>
-              </form>
-            </div>
+              {/* Submit button */}
+              <button type="submit" className="aptCreateAppDateButton">
+                Create Appointment
+              </button>
+            </form>
           </div>
         </div>
       </div>

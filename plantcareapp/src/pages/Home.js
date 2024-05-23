@@ -22,7 +22,7 @@ const Home = () => {
           />
           <br />
           <h2>Mari</h2>
-          <p style={{ marginTop: "-15px" }}>@marinathompson123</p>
+          <p style={{ marginTop: "-15px" }}>marinathompson123@gmail.com</p>
         </header>
         <div
           className="card"
