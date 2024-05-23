@@ -1,14 +1,7 @@
 import "./Appointments.css";
 import "./Global.css";
 import NavBar from "../Components/NavBar";
-
-const AppointmentItem = ({ AppointmentName }) => {
-  return (
-    <div className="aptAppointmentItem">
-      <h6> {AppointmentName} </h6>
-    </div>
-  );
-};
+import AppointmentItem from "../Components/AppointmentItem";
 
 const Appointments = () => {
   return (
@@ -24,10 +17,22 @@ const Appointments = () => {
 
         <div className="aptAppointmentContainer">
           <div className="aptAppointmentContainerAppointments">
-            <AppointmentItem AppointmentName={"Orchid"} />
-            <AppointmentItem AppointmentName={"Algae"} />
-            <AppointmentItem AppointmentName={"Grass"} />
-            <AppointmentItem AppointmentName={"Kompos"} />
+            <AppointmentItem
+              PlantName={"Orchid"}
+              AppointmentDate={"2023/06/21"}
+            />
+            <AppointmentItem
+              PlantName={"Algae"}
+              AppointmentDate={"2023/06/21"}
+            />
+            <AppointmentItem
+              PlantName={"Grass"}
+              AppointmentDate={"2023/06/21"}
+            />
+            <AppointmentItem
+              PlantName={"Kompos"}
+              AppointmentDate={"2023/06/21"}
+            />
           </div>
           <p style={{ marginTop: "20px", marginBottom: "0px" }}>View all</p>
         </div>
