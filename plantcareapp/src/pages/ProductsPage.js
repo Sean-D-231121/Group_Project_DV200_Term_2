@@ -8,7 +8,6 @@ const ProductsPage = () => {
      const [products, setProducts] = useState([]);
 
      useEffect(() => {
-       // Fetch products from the backend
        axios
          .get("http://localhost:5000/api/products")
          .then((response) => {
