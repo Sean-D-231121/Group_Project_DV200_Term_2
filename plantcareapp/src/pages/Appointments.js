@@ -1,4 +1,5 @@
 import "./Appointments.css";
+import "./Global.css";
 import NavBar from "../Components/NavBar";
 
 const AppointmentItem = ({ AppointmentName }) => {
@@ -13,7 +14,7 @@ const Appointments = () => {
   return (
     <div>
       <NavBar />
-      <div className="aptMain">
+      <div className="webpage-frame">
         <h2 style={{ marginTop: "50px", marginBottom: "50px" }}>
           Appointments
         </h2>
