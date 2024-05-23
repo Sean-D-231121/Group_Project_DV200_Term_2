@@ -1,37 +1,44 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import MySideNav from '../Components/NavBar';
+import "./PlantLibrary.css";
+import "./Global.css";
+import NavBar from "../Components/NavBar";
 
-const PlantLibrary = () => {
-  const [plants, setPlants] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'https://api.trefle.io/v1/plants?token=o_b_s8Km0_KxtuCGsrwZAvXvAty4lM3Ps0ywNY2qzWs&filter[limit]=20'
-        );
-        setPlants(response.data.data);
-      } catch (error) {
-        console.error('Error fetching plants:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+const PlantLibraryObject = ({
+  PlantID,
+  PlantImage,
+  PlantName,
+  PlantDescription,
+}) => {
   return (
-    <div>
-        <MySideNav />
-      {plants.map((plant) => (
-        <div key={plant.id} style={{ border: '1px solid gray', padding: '10px', margin: '10px' }}>
-          <h2>{plant.common_name}</h2>
-          <p>{plant.scientific_name}</p>
-          <img src={plant.image_url} alt={plant.common_name} style={{ maxWidth: '100%' }} />
-        </div>
-      ))}
+    <div className="plObjectMain">
+      <button className="plObjectCloseBTN">-</button>
+      <div className="plObjectImage"></div>
+      <h6>Plant name</h6>
+      <p>Plant description</p>
+      <button className="plObjectViewPlantHisBTN">Plant history</button>
     </div>
   );
 };
 
+const PlantLibrary = () => {
+  return (
+    <div>
+      <NavBar />
+      <div className="webpage-frame" style={{ backgroundColor: "white" }}>
+        <h2 style={{ marginTop: "40px", marginBottom: "40px" }}>
+          Plants Library
+        </h2>
+        <div className="plLibrarySpace">
+          <button className="plLibraryAddPlamtBTN">Add plant</button>
+          <div className="plLibraryContainer">
+            <PlantLibraryObject />
+            <PlantLibraryObject />
+            <PlantLibraryObject />
+            <PlantLibraryObject />
+            <PlantLibraryObject />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default PlantLibrary;

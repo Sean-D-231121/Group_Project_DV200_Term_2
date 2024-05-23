@@ -1,0 +1,88 @@
+.profile-container {
+    background-color: white;
+    padding: 20px;
+}
+
+.user-photo {
+    margin-right: -40px;
+    width: 12%;
+}
+
+.card {
+    width: 356px;
+    height: 215px;
+    background-color: #DFFEDE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    margin-left: 38%;
+    margin-top: 3%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card div {
+    text-align: center;
+}
+
+.card h6 {
+    font-weight: bold;
+}
+
+.card p {
+    text-align: center;
+    font-size: 12px; 
+}
+
+.update-button {
+    background-color: #FFAAF1;
+    border: none;
+    color: black; 
+    padding: 8px 16px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+.update-button:hover {
+    background-color: #E599DA; 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.update-button:active {
+    background-color: #D489C2; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.appointment-button {
+    background-color: #FFAAF1;
+    border: none;
+    color: black; 
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, box-shadow 0.3s; 
+    margin-right: 10px; 
+}
+
+.appointment-button:hover {
+    background-color: #E599DA; 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.appointment-button:active {
+    background-color: #D489C2; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+}
