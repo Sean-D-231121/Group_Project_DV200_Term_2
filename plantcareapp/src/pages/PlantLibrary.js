@@ -23,7 +23,7 @@ const PlantLibrary = () => {
   return (
     <div>
       <NavBar />
-      <div className="webpage-frame">
+      <div className="webpage-frame" style={{ backgroundColor: "white" }}>
         <h2 style={{ marginTop: "40px", marginBottom: "40px" }}>
           Plants Library
         </h2>

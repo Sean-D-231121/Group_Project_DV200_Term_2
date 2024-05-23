@@ -14,7 +14,7 @@ const Appointments = () => {
   return (
     <div>
       <NavBar />
-      <div className="webpage-frame">
+      <div className="webpage-frame" style={{ backgroundColor: "white" }}>
         <h2 style={{ marginTop: "50px", marginBottom: "50px" }}>
           Appointments
         </h2>
