@@ -2,8 +2,11 @@ import "./Appointments.css";
 import "./Global.css";
 import NavBar from "../Components/NavBar";
 import AppointmentItem from "../Components/AppointmentItem";
-
+import React, {useState} from 'react';
 const Appointments = () => {
+  const [plantName, setPlantName] = useState("")
+  const [date, setDate] = useState("")
+  const [plantDescscrition, setPlantDescription] = useState("")
   return (
     <div>
       <NavBar />
