@@ -66,6 +66,11 @@ function MySideNav() {
             <span style={{ color: "black" }}>Settings</span>
           </NavText>
         </NavItem>
+        <NavItem eventKey="SignIn">
+          <NavText>
+            <span style={{ color: "black" }}>Sign out</span>
+          </NavText>
+        </NavItem>
       </SideNav.Nav>
     </SideNav>
   );
