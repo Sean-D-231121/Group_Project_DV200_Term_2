@@ -30,8 +30,10 @@ const cartRoutes = require("./Routes/cartRoutes");
 app.use("/api/carts", cartRoutes);
 const plantsRoutes = require("./Routes/PlantsRoutes");
 app.use("/api/plants", plantsRoutes);
-const AppointmentRoutes = require("./Routes/AppointmentRoutes");
-app.use("/api/appointments",AppointmentRoutes);
+const appointmentRoutes = require("./Routes/AppointmentRoutes");
+app.use("/api/appointments",appointmentRoutes);
+const employeeRoutes = require("./Routes/EmployeeRoutes");
+app.use("/api/employees", employeeRoutes);
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
