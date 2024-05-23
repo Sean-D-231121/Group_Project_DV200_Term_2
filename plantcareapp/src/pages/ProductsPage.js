@@ -1,28 +1,23 @@
 import "./productpage.css";
 import MySideNav from "../Components/NavBar";
 import { Rating } from "react-simple-star-rating";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import axios from "axios";
 const ProductsPage = () => {
-    const [products, setProducts] = useState([
-      {
-        id: 1,
-        name: "Colour Booster",
-        description: "Plant food formulated for macro and micro nutrients",
-        image: require("../Images/Product-3.png"),
-        rating: 3,
-        price: "R70, 00",
-        carted: false,
-      },
-      {
-        id: 2,
-        name: "Multi-booster",
-        description: "Boost your plants vitality by leaps and bounds",
-        image: require("../Images/Product-2.png"),
-        rating: 5,
-        price: "R100, 00",
-        carted: false,
-      },
-    ]);
+     const [products, setProducts] = useState([]);
+
+     useEffect(() => {
+       // Fetch products from the backend
+       axios
+         .get("http://localhost:5000/api/products")
+         .then((response) => {
+           setProducts(response.data);
+         })
+         .catch((error) => {
+           console.error("There was an error fetching the products!", error);
+         });
+     }, []);
+
      const addCartButtonClick =(productId) => {
       setProducts((prevProducts) => prevProducts.map((product) =>
         product.id === productId ? {...product, carted: !product.carted} : product
@@ -78,7 +73,7 @@ const ProductsPage = () => {
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text">{product.description}</p>
                   <Rating initialValue={product.rating} readonly />
-                  <p>{product.price}</p>
+                  <p>R{product.price}.00</p>
                   <button onClick={() => addCartButtonClick(product.id)} className="btn CustomerButton mt-auto">
                     {product.carted ? "Added to cart" : "Add to cart"}
                   </button>
