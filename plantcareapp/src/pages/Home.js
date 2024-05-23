@@ -15,7 +15,7 @@ const Home = () => {
                 <img src={UserPhoto} alt="User" className="user-photo" style={{ marginRight: '-40px', width: '12%' }} />
                 <br />
                 <h2>Mari</h2>
-                <p style={{ marginTop: '-15px' }}>@marinathompson123</p>
+                <p style={{ marginTop: '-15px' }}>marinathompson123@gmail.com</p>
             </header>
             <div className="card" style={{ 
                 width: '356px', 
