@@ -10,7 +10,6 @@ const Home = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Get user details from session storage
     const storedUser = sessionStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
