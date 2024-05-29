@@ -5,8 +5,9 @@ import "./Home.css";
 import "./Global.css";
 import UserPhoto from "../Userphoto.png";
 import MySideNav from "../Components/NavBar";
-
+;
 const Home = () => {
+ 
   const [user, setUser] = useState(null);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Splash.css";
@@ -12,8 +12,17 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
+  const [usertype, setUserType] = useState("")
+
+useEffect(() => {
+  const storedRole = sessionStorage.getItem("role");
+  if (storedRole) {
+    setUserType(storedRole)
+  }
+}, []);
 
   const handleSubmit = async (event) => {
+    
     event.preventDefault();
 
     if (password !== confirmPassword) {
@@ -32,6 +41,7 @@ const SignUp = () => {
         username,
         email,
         password,
+        usertype,
       });
 
       if (response.status === 201) {
