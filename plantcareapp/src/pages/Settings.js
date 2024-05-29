@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import "./Settings.css";
@@ -7,11 +7,19 @@ import UserPhoto from "../Userphoto.png";
 import MySideNav from "../Components/NavBar";
 
 const Settings = () => {
+  const [user, setUser] = useState(null);
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const storedUser = sessionStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   const clearInputs = () => {
     setName("");
@@ -54,7 +62,7 @@ const Settings = () => {
           <div className="profile-info">
             <br />
             <h5>Name:</h5>
-            <p>Marina Thompson</p>
+            <p>{user && user.name}</p>
             <div className="text-box-container">
               <input
                 type="text"
@@ -65,8 +73,8 @@ const Settings = () => {
             </div>
             <br />
             <h5>Username:</h5>
+            <p>{user && user.username}</p>
             <div className="text-box-container">
-              <p>Mari</p>
               <input
                 type="text"
                 placeholder="Update Username"
@@ -76,7 +84,7 @@ const Settings = () => {
             </div>
             <br />
             <h5>Email:</h5>
-            <p>marinathompson123@gmail.com</p>
+            <p>{user && user.email}</p>
             <div className="text-box-container">
               <input
                 type="text"
