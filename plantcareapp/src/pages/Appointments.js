@@ -1,19 +1,16 @@
 import "./Appointments.css";
+import "./Global.css";
 import NavBar from "../Components/NavBar";
-
-const AppointmentItem = ({ AppointmentName }) => {
-  return (
-    <div className="aptAppointmentItem">
-      <h6> {AppointmentName} </h6>
-    </div>
-  );
-};
-
+import AppointmentItem from "../Components/AppointmentItem";
+import React, {useState} from 'react';
 const Appointments = () => {
+  const [plantName, setPlantName] = useState("")
+  const [date, setDate] = useState("")
+  const [plantDescscrition, setPlantDescription] = useState("")
   return (
     <div>
       <NavBar />
-      <div className="aptMain">
+      <div className="webpage-frame" style={{ backgroundColor: "white" }}>
         <h2 style={{ marginTop: "50px", marginBottom: "50px" }}>
           Appointments
         </h2>
@@ -23,10 +20,22 @@ const Appointments = () => {
 
         <div className="aptAppointmentContainer">
           <div className="aptAppointmentContainerAppointments">
-            <AppointmentItem AppointmentName={"Orchid"} />
-            <AppointmentItem AppointmentName={"Algae"} />
-            <AppointmentItem AppointmentName={"Grass"} />
-            <AppointmentItem AppointmentName={"Kompos"} />
+            <AppointmentItem
+              PlantName={"Orchid"}
+              AppointmentDate={"2023/06/21"}
+            />
+            <AppointmentItem
+              PlantName={"Algae"}
+              AppointmentDate={"2023/06/21"}
+            />
+            <AppointmentItem
+              PlantName={"Grass"}
+              AppointmentDate={"2023/06/21"}
+            />
+            <AppointmentItem
+              PlantName={"Kompos"}
+              AppointmentDate={"2023/06/21"}
+            />
           </div>
           <p style={{ marginTop: "20px", marginBottom: "0px" }}>View all</p>
         </div>
@@ -34,39 +43,41 @@ const Appointments = () => {
         <div className="aptCreateAppointmentFrame">
           <h4>Create Appointments</h4>
           <div className="aptCreateAppCont">
-            {/* Left side: Plant details */}
-            <div className="aptCreateAppPlantDetails">
-              <p>Photo of the plant</p>
-              <div className="aptCreateAppPlantDetailsPhoto"></div>
-              <p
-                style={{
-                  marginTop: "40px",
-                  marginBottom: "5px",
-                  textAlign: "left",
-                }}
-              >
-                Plant type
-              </p>
-              {/* input */}
-              <select
-                class="form-control aptSelectPlantType"
-                id="exampleFormControlSelect1"
-              >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
+            {/* Form Appointment */}
+            <form action="" className="aptForm">
+              {/* Select plant photo */}
+              <div className="form-group" style={{ marginBottom: "30px" }}>
+                <p>Photo of the plant</p>
+                <div className="aptCreateAppPlantDetailsPhoto"></div>
+              </div>
 
-            {/* Right side: Date select */}
-            <div className="aptCreateAppDateSelects">
-              <p>Choose date for appointment</p>
-              <input type="date" className="aptCreateAppDateSelectsDate" />
-            </div>
+              {/* Input plant name */}
+              <div className="form-group" style={{ marginBottom: "30px" }}>
+                <p>Plant name</p>
+                <input
+                  type="text"
+                  className="aptCreateAppDateSelectsDate"
+                  name="plantName"
+                  placeholder="Enter your name"
+                />
+              </div>
+
+              {/* Input appointment date */}
+              <div className="form-group" style={{ marginBottom: "50px" }}>
+                <p>Choose date for appointment</p>
+                <input
+                  type="date"
+                  className="aptCreateAppDateSelectsDate"
+                  name="appointmentDate"
+                />
+              </div>
+
+              {/* Submit button */}
+              <button type="submit" className="aptCreateAppDateButton">
+                Create Appointment
+              </button>
+            </form>
           </div>
-          <button className="aptCreateAppDateButton">Create Appointment</button>
         </div>
       </div>
     </div>
