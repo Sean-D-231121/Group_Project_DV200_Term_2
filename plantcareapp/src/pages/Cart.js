@@ -1,37 +1,27 @@
 import MySideNav from "../Components/NavBar";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Cart.css";
 import "./Global.css";
 import minusCircle from "../Images/minus-circle.png";
 
 const Cart = () => {
-  const [cart, setCart] = useState([
-    {
-      id: 1,
-      name: "Colour Booster",
-      description: "Plant food formulated for macro and micro nutrients",
-      image: require("../Images/Product-3.png"),
-      rating: 3,
-      price: "R70, 00",
-      carted: true,
-    },
-    {
-      id: 2,
-      name: "Multi-booster",
-      description: "Boost your plants vitality by leaps and bounds",
-      image: require("../Images/Product-2.png"),
-      rating: 5,
-      price: "R100, 00",
-      carted: true,
-    },
-  ]);
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    // Load cart items from session storage when the component mounts
+    const storedCart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    setCart(storedCart);
+  }, []);
 
   const handleRemoveAll = () => {
     setCart([]);
+    sessionStorage.setItem("cart", JSON.stringify([]));
   };
 
   const handleRemoveItem = (id) => {
-    setCart(cart.filter((item) => item.id !== id));
+    const updatedCart = cart.filter((item) => item.id !== id);
+    setCart(updatedCart);
+    sessionStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   return (
@@ -65,7 +55,7 @@ const Cart = () => {
                     <div className="row g-0">
                       <div className="col-md-2 ms-2 mt-3">
                         <img
-                          src={cartItem.image}
+                          src={`http://localhost:5000/Images/${cartItem.image}`}
                           className="img-fluid rounded-start"
                           alt={"Product-" + cartItem.id}
                         />
@@ -74,7 +64,7 @@ const Cart = () => {
                         <div className="card-body">
                           <div className="col-6">
                             <h5 className="card-title">{cartItem.name}</h5>
-                            <p className="card-text">{cartItem.price}</p>
+                            <p className="card-text">R{cartItem.price}.00</p>
                           </div>
                           <img
                             src={minusCircle}

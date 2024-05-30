@@ -29,6 +29,8 @@ const SignIn = () => {
         }
       );
       if (response.status === 200) {
+        // Store user details in session storage
+        sessionStorage.setItem("user", JSON.stringify(response.data.user));
         navigate("/Home");
       }
     } catch (error) {
