@@ -8,11 +8,14 @@ import MySideNav from "../Components/NavBar";
 
 const Home = () => {
   const [user, setUser] = useState(null);
+  const [profilePhoto, setProfilePhoto] = useState(UserPhoto);
 
   useEffect(() => {
     const storedUser = sessionStorage.getItem("user");
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      const parsedUser = JSON.parse(storedUser);
+      setUser(parsedUser);
+      setProfilePhoto(parsedUser.profilePhoto || UserPhoto);
     }
   }, []);
 
@@ -24,10 +27,10 @@ const Home = () => {
           <h1>Profile</h1>
           <br />
           <img
-            src={UserPhoto}
+            src={profilePhoto}
             alt="User"
             className="user-photo"
-            style={{ marginRight: "-40px", width: "12%" }}
+            style={{  width: "12%" }}
           />
           <br />
           <h2>{user && user.name}</h2>
@@ -43,7 +46,7 @@ const Home = () => {
             justifyContent: "center",
             alignItems: "center",
             borderRadius: "5%",
-            marginLeft: "38%",
+            marginLeft: "36%",
             marginTop: "3%",
             boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
           }}
