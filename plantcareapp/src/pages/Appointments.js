@@ -2,8 +2,37 @@ import "./Appointments.css";
 import "./Global.css";
 import NavBar from "../Components/NavBar";
 import AppointmentItem from "../Components/AppointmentItem";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Appointments = () => {
+  const [appointments, setAppointments] = useState([]);
+  const currentUserID = 1;
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/api/appointments")
+      .then((response) => {
+        setAppointments(response.data);
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the appointments!", error);
+      });
+  });
+
+  // useEffect(() => {
+  //   // Fetch products from the API
+  //   axios
+  //     .get("http://localhost:3001/api/products")
+  //     .then((response) => {
+  //       setProducts(response.data);
+  //       setFilteredProducts(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("There was an error fetching the products!", error);
+  //     });
+  // }, []);
+
   return (
     <div>
       <NavBar />
@@ -17,22 +46,13 @@ const Appointments = () => {
 
         <div className="aptAppointmentContainer">
           <div className="aptAppointmentContainerAppointments">
-            <AppointmentItem
-              PlantName={"Orchid"}
-              AppointmentDate={"2023/06/21"}
-            />
-            <AppointmentItem
-              PlantName={"Algae"}
-              AppointmentDate={"2023/06/21"}
-            />
-            <AppointmentItem
-              PlantName={"Grass"}
-              AppointmentDate={"2023/06/21"}
-            />
-            <AppointmentItem
-              PlantName={"Kompos"}
-              AppointmentDate={"2023/06/21"}
-            />
+            {appointments.map((appObj) => (
+              <AppointmentItem
+                key={appObj.appointmentId} // Ensure unique key for each element
+                PlantName={appObj.plants}
+                AppointmentDate={appObj.date}
+              />
+            ))}
           </div>
           <p style={{ marginTop: "20px", marginBottom: "0px" }}>View all</p>
         </div>

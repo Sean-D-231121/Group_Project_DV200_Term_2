@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import "./Home.css";
 import "./Global.css";
 import UserPhoto from "../Userphoto.png";
 import MySideNav from "../Components/NavBar";
-
+;
 const Home = () => {
+ 
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = sessionStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
   return (
     <div className="profile-container">
       <MySideNav />
@@ -21,8 +31,8 @@ const Home = () => {
             style={{ marginRight: "-40px", width: "12%" }}
           />
           <br />
-          <h2>Mari</h2>
-          <p style={{ marginTop: "-15px" }}>marinathompson123@gmail.com</p>
+          <h2>{user && user.name}</h2>
+          <p style={{ marginTop: "-15px" }}>{user && user.email}</p>
         </header>
         <div
           className="card"
@@ -43,13 +53,13 @@ const Home = () => {
             <h6 style={{ fontWeight: "bold" }}>Personal Information</h6>
             <p style={{ textAlign: "center", fontSize: "12px" }}>
               Name: <br />
-              Marina Thompson <br />
+              {user && user.name} <br />
               <br />
               Username: <br />
-              Mari <br />
+              {user && user.username} <br />
               <br />
               Email: <br />
-              @marinathompson123
+              {user && user.email}
             </p>
           </div>
         </div>
