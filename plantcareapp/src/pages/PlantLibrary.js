@@ -3,6 +3,7 @@ import "./Global.css";
 import NavBar from "../Components/NavBar";
 import PlantLibraryObject from "../Components/PlantLibraryObject";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const PlantLibrary = () => {
   const [plants, setPlants] = useState([]);
@@ -65,23 +66,22 @@ const PlantLibrary = () => {
 
     // Simulate loading correct plant objects for the current user logged in
     // Filter plants based on currentUserID
-    const userPlants = plantObjects.filter((plant) => plant.UserID === userID);
-    setPlants(userPlants);
-
-    // useEffect(() => {
-    //   // Fetch plants from the backend
-    //   axios
-    //     .get("http://localhost:5000/api/plants")
-    //     .then((response) => {
-    //       setPlants(response.data);
-    //     })
-    //     .catch((error) => {
-    //       console.error("There was an error fetching the products!", error);
-    //     });
-    // }, []);
-
-    console.log(plantObjects);
+    // const userPlants = plantObjects.filter((plant) => plant.UserID === userID);
+    // setPlants(userPlants);
   });
+
+  useEffect(() => {
+    // Fetch plants from the backend
+    axios
+      .get("http://localhost:3001/api/plants")
+      .then((response) => {
+        setPlants(response.data);
+        console.log(plants);
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the plants!", error);
+      });
+  }, []);
 
   return (
     <div>
