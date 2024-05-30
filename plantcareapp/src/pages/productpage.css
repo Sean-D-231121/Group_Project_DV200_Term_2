@@ -9,9 +9,10 @@
     font-size: 3vh;
 }
 .images-circular{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto;
+    
 }
 .card{
     background-color: #DFFEDE;

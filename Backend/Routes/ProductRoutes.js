@@ -3,6 +3,7 @@ const router = express.Router();
 const Product = require("../Models/Product");
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
 
 // Configure multer storage
 const storage = multer.diskStorage({
@@ -36,7 +37,6 @@ router.post("/registerProduct", upload.single("image"), async (req, res) => {
   }
 });
 
-// GET route to retrieve all products
 router.get("/", async (req, res) => {
   try {
     const products = await Product.find();
@@ -46,45 +46,35 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.post("/deleteProduct", async (req, res) => {
+  const { id } = req.body;
+
+  try {
+    const product = await Product.findOne({ id });
+
+    if (product) {
+      // Remove the image file from the filesystem
+      if (product.image) {
+        const imagePath = path.join(
+          __dirname,
+          "..",
+          "public",
+          "Images",
+          product.image
+        );
+        fs.unlink(imagePath, (err) => {
+          if (err) console.error("Failed to delete image file:", err);
+        });
+      }
+
+      await product.deleteOne();
+      res.status(200).json({ message: "Product found and deleted", product });
+    } else {
+      res.status(404).json({ error: "Product not found" });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;
-
-// const express = require("express");
-// const router = express.Router();
-// const Product = require("../Models/Product");
-// const multer = require("multer");
-// const path = require("path");
-// const storage = multer.diskStorage({
-//   destination: (req, image, cb) =>{
-//     cb(null, 'public/Images')
-//   },
-//   filename: (req, image, cb) =>{
-//     cb(null, image.fieldname + "_" + path.extname(image.orignalname))
-//   }
-// })
-
-// const imageStorage = multer({
-//   storage : storage
-// })
-
-// router.post("/registerProduct", imageStorage.single("image"),  async (req, res) => {
-//   console.log(req.image)
-//   const { id , name, image, rating, description, price } = req.body;
-//   try {
-//     const product = new Product({ id, name, description, image, rating, price });
-//     await product.save();
-//     res.status(201).json(product);
-//   } catch (err) {
-//     res.status(400).json({ error: err.message });
-//   }
-// });
-
-// router.get("/", async (req, res) => {
-//   try {
-//     const products = await Product.find();
-//     res.status(200).json(products);
-//   } catch (err) {
-//     res.status(400).json({ error: err.message });
-//   }
-// });
-
-// module.exports = router;
