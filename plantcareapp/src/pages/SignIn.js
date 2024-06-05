@@ -31,6 +31,7 @@ const SignIn = () => {
       if (response.status === 200) {
         // Store user details in session storage
         sessionStorage.setItem("user", JSON.stringify(response.data.user));
+        sessionStorage.setItem("userName", JSON.stringify(response.data));
         navigate("/Home");
       }
     } catch (error) {
