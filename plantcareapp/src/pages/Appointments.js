@@ -7,31 +7,61 @@ import axios from "axios";
 
 const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
+  const [message, setMessage] = useState("");
+  const [username, setUsername] = useState("");
+  const [plants, setPlants] = useState([]);
+  const [date, setDate] = useState("");
+  const [reason, setReason] = useState("");
+  const [currentPlant, setCurrentPlant] = useState([]);
+  const [currentFilteredPlant, setCurrentFilteredPlant] = useState([]);
   const currentUserID = 1;
+  const macPort = "3001";
+  const winPort = "5000";
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/api/appointments")
+      .get(`http://localhost:${macPort}/api/appointments`)
       .then((response) => {
         setAppointments(response.data);
       })
       .catch((error) => {
         console.error("There was an error fetching the appointments!", error);
       });
-  });
+    axios
+      .get(`http://localhost:${macPort}/api/plants`)
+      .then((response) => {
+        setCurrentPlant(response.data);
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the plants!", error);
+      });
+  }, [macPort]);
 
-  // useEffect(() => {
-  //   // Fetch products from the API
-  //   axios
-  //     .get("http://localhost:3001/api/products")
-  //     .then((response) => {
-  //       setProducts(response.data);
-  //       setFilteredProducts(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("There was an error fetching the products!", error);
-  //     });
-  // }, []);
+  const handleCreateAppointment = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post(
+        `http://localhost:${macPort}/api/appointments/create`,
+        {
+          username,
+          plants,
+          date,
+          reason,
+        }
+      );
+
+      if (response.status === 201) {
+        setMessage("Created appointment");
+      } else {
+        setMessage("Error creating appointment");
+      }
+    } catch (error) {
+      const errorMsg =
+        error.response?.data?.error || "Error creating appointment";
+      setMessage(errorMsg);
+    }
+  };
 
   return (
     <div>
@@ -61,21 +91,45 @@ const Appointments = () => {
           <h4>Create Appointments</h4>
           <div className="aptCreateAppCont">
             {/* Form Appointment */}
-            <form action="" className="aptForm">
+            <form onSubmit={handleCreateAppointment} className="aptForm">
               {/* Select plant photo */}
               <div className="form-group" style={{ marginBottom: "30px" }}>
                 <p>Photo of the plant</p>
                 <div className="aptCreateAppPlantDetailsPhoto"></div>
               </div>
 
-              {/* Input plant name */}
+              {/* Choose plant dropdown */}
               <div className="form-group" style={{ marginBottom: "30px" }}>
-                <p>Plant name</p>
+                <p>Choose plant</p>
+                <select
+                  multiple
+                  className="form-control aptCreateAppSelplantDate"
+                  id="exampleFormControlSelect2"
+                  value={plants}
+                  onChange={(e) =>
+                    setPlants(
+                      [...e.target.selectedOptions].map(
+                        (option) => option.value
+                      )
+                    )
+                  }
+                >
+                  {currentFilteredPlant.map((filteredPlant, index) => (
+                    <option key={index}>{filteredPlant.plantName}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Input plant appointment reason */}
+              <div className="form-group" style={{ marginBottom: "30px" }}>
+                <p>Appointment reason</p>
                 <input
                   type="text"
                   className="aptCreateAppDateSelectsDate"
                   name="plantName"
-                  placeholder="Enter your name"
+                  placeholder="Enter the reason"
+                  value={reason}
+                  onChange={(e) => setReason(e.target.value)}
                 />
               </div>
 
@@ -86,6 +140,8 @@ const Appointments = () => {
                   type="date"
                   className="aptCreateAppDateSelectsDate"
                   name="appointmentDate"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
                 />
               </div>
 
@@ -100,4 +156,5 @@ const Appointments = () => {
     </div>
   );
 };
+
 export default Appointments;
