@@ -5,7 +5,7 @@
 }
 
 .user-photo {
-    margin-right: -40px;
+    margin-right: 1%;
     width: 12%;
     margin-bottom: 20px; 
 }
@@ -61,3 +61,10 @@
     margin-left: -2%;
 }
 
+.user-photo {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  

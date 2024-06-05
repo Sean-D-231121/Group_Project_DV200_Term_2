@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "../App.css";
 import "./Home.css";
 import "./Global.css";
@@ -9,12 +10,25 @@ import MySideNav from "../Components/NavBar";
 const Home = () => {
  
   const [user, setUser] = useState(null);
+  const [profilePhoto, setProfilePhoto] = useState(UserPhoto);
+  const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
     const storedUser = sessionStorage.getItem("user");
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      const parsedUser = JSON.parse(storedUser);
+      setUser(parsedUser);
+      setProfilePhoto(parsedUser.profilePhoto || UserPhoto);
     }
+
+    axios
+      .get("http://localhost:3001/api/appointments")  // Adjust the port as needed
+      .then((response) => {
+        setAppointments(response.data);
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the appointments!", error);
+      });
   }, []);
 
   return (
@@ -25,10 +39,10 @@ const Home = () => {
           <h1>Profile</h1>
           <br />
           <img
-            src={UserPhoto}
+            src={profilePhoto}
             alt="User"
             className="user-photo"
-            style={{ marginRight: "-40px", width: "12%" }}
+            style={{ width: "12%" }}
           />
           <br />
           <h2>{user && user.name}</h2>
@@ -44,7 +58,7 @@ const Home = () => {
             justifyContent: "center",
             alignItems: "center",
             borderRadius: "5%",
-            marginLeft: "38%",
+            marginLeft: "36%",
             marginTop: "3%",
             boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
           }}
@@ -89,41 +103,27 @@ const Home = () => {
           style={{
             display: "flex",
             justifyContent: "center",
+            flexWrap: "wrap",
             marginTop: "10px",
           }}
         >
-          <button className="appointment-button">
-            <Link
-              to="/appointments"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Monstera - Monday 16/5
-            </Link>
-          </button>
-          <button className="appointment-button">
-            <Link
-              to="/appointments"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Orchid - Friday 20/5
-            </Link>
-          </button>
-          <button className="appointment-button">
-            <Link
-              to="/appointments"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Begonia - Wednesday 3/6
-            </Link>
-          </button>
-          <button className="appointment-button">
-            <Link
-              to="/appointments"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Fern - Saturday 14/6
-            </Link>
-          </button>
+          {appointments.length > 0 ? (
+            appointments.map((appointment) => (
+              <button
+                key={appointment.appointmentId}
+                className="appointment-button"
+              >
+                <Link
+                  to="/appointments"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  {appointment.plants} - {new Date(appointment.date).toLocaleDateString()}
+                </Link>
+              </button>
+            ))
+          ) : (
+            <p>No current appointments.</p>
+          )}
         </div>
 
         <div
