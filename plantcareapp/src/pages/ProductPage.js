@@ -11,7 +11,7 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [isInCart, setIsInCart] = useState(false);
   const [editMode, setEditMode] = useState(false);
-  const [role, setRole] = useState("admin"); 
+  const [role, setRole] = useState(""); 
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -34,8 +34,8 @@ const ProductPage = () => {
     
     const storedUser = sessionStorage.getItem("user");
     if (storedUser) {
-      const user = JSON.parse(storedUser);
-      setRole(user.role);
+      const parsedUser = JSON.parse(storedUser);
+      setRole(parsedUser.usertype); 
     }
   }, [id]);
 
@@ -82,7 +82,7 @@ const ProductPage = () => {
                 <button onClick={handleAddToCart} className="btn btn-primary">
                   {isInCart ? "Remove from Cart" : "Add to Cart"}
                 </button>
-                {role === "admin" || "Admin" ? (
+                {role && (role === "admin" || role ==="Admin")  ? (
                   <button
                     onClick={() => setEditMode(true)}
                     className="btn btn-secondary ml-2"
