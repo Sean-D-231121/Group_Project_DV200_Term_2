@@ -12,17 +12,16 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const [usertype, setUserType] = useState("")
+  const [usertype, setUserType] = useState("");
 
-useEffect(() => {
-  const storedRole = sessionStorage.getItem("role");
-  if (storedRole) {
-    setUserType(storedRole)
-  }
-}, []);
+  useEffect(() => {
+    const storedRole = sessionStorage.getItem("role");
+    if (storedRole) {
+      setUserType(storedRole);
+    }
+  }, []);
 
   const handleSubmit = async (event) => {
-    
     event.preventDefault();
 
     if (password !== confirmPassword) {
@@ -36,13 +35,16 @@ useEffect(() => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/users/register", {
-        name,
-        username,
-        email,
-        password,
-        usertype,
-      });
+      const response = await axios.post(
+        "http://localhost:5000/api/users/register",
+        {
+          name,
+          username,
+          email,
+          password,
+          usertype,
+        }
+      );
 
       if (response.status === 201) {
         setMessage("User created successfully");
