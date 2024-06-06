@@ -36,7 +36,7 @@ const SignUp = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/register",
+        "http://localhost:3001/api/users/register",
         {
           name,
           username,
@@ -48,7 +48,7 @@ const SignUp = () => {
 
       if (response.status === 201) {
         setMessage("User created successfully");
-        setTimeout(() => navigate("/home"), 1000); // Navigate after a short delay
+        setTimeout(() => navigate("/home"), 1000);
       } else {
         setMessage("Error creating user");
       }
