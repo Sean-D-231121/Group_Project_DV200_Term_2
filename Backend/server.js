@@ -12,9 +12,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 app.use(express.static('public'))
-app.get('/', (req, res) => { 
-    res.send('Hello World');
-});
+
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
@@ -33,8 +31,7 @@ const plantsRoutes = require("./Routes/PlantsRoutes");
 app.use("/api/plants", plantsRoutes);
 const appointmentRoutes = require("./Routes/AppointmentRoutes");
 app.use("/api/appointments",appointmentRoutes);
-const employeeRoutes = require("./Routes/EmployeeRoutes");
-app.use("/api/employees", employeeRoutes);
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

@@ -5,54 +5,62 @@ import { Rating } from "react-simple-star-rating";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AddProduct from "../Components/AddProduct";
+import { Link } from "react-router-dom";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
-  const [role, setRole] = useState("admin"); // State to check if the user is an admin
+  ;
   const [addProduct, setAddProduct] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState([]);
-
+  const [user, setUser] = useState([]);
+  const [role, setRole] = useState("admin");
   useEffect(() => {
-    // Fetch products from the API
     axios
       .get("http://localhost:5000/api/products")
       .then((response) => {
-        setProducts(response.data);
-        setFilteredProducts(response.data);
+        const productsWithCarted = response.data.map((product) => ({
+          ...product,
+          carted: false, 
+        }));
+        setProducts(productsWithCarted);
+        setFilteredProducts(productsWithCarted);
       })
       .catch((error) => {
         console.error("There was an error fetching the products!", error);
       });
+
+    const storedUser = sessionStorage.getItem("user");
+    if (storedUser) {
+      const parsedUser = JSON.parse(storedUser);
+      setUser(parsedUser);
+      setRole(parsedUser.usertype); // Set role from sessionStorage
+    }
+    
   }, []);
 
   const addCartButtonClick = (productId) => {
     setProducts((prevProducts) =>
       prevProducts.map((product) =>
         product.id === productId
-          ? { ...product, carted: !product.carted }
+          ? { ...product, carted: !product.carted } // Toggle carted state
           : product
       )
     );
-
-    // Find the clicked product
+    
     const clickedProduct = products.find((product) => product.id === productId);
-
     if (clickedProduct) {
-      // Get the current cart from session storage
       const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-
-      // Check if the product is already in the cart
       const productInCart = cart.find((product) => product.id === productId);
-
+      setFilteredProducts(products);
       if (productInCart) {
-        // Remove the product from the cart if it was already added
         const updatedCart = cart.filter((product) => product.id !== productId);
         sessionStorage.setItem("cart", JSON.stringify(updatedCart));
+        
       } else {
-        // Add the product to the cart if it was not added
         cart.push(clickedProduct);
         sessionStorage.setItem("cart", JSON.stringify(cart));
       }
+      ;
     }
   };
 
@@ -119,7 +127,7 @@ const ProductsPage = () => {
                       <div className="col-2">
                         <div className="dropdown">
                           <button
-                            className="btn btn-secondary dropdown-toggle mt-4 mr-5"
+                            className="btn btn-primary dropdown-toggle mt-4 mr-5"
                             type="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
@@ -215,41 +223,47 @@ const ProductsPage = () => {
                 </div>
 
                 <div className="d-flex justify-content-center gap-5 mt-5 ml-5">
-                  {role === "admin" || role === "Admin"
-                    ? filteredProducts.map((product) => (
-                        <div
-                          className="card ms-3 mt-5"
-                          style={{ width: "18rem", height: "32rem" }}
-                          key={product.id}
+                  {filteredProducts.map((product) => (
+                    <div
+                      className="card ms-3 mt-5"
+                      style={{ width: "18rem", height: "32rem" }}
+                      key={product.id}
+                    >
+                      <img
+                        className="images-circular card-img-top mt-2"
+                        src={`http://localhost:5000/Images/${product.image}`}
+                        alt={`${product.name}`}
+                      />
+                      <div className="card-body ml-5">
+                        <h5 className="card-title">{product.name}</h5>
+                        <p className="card-text">{product.description}</p>
+                        <Rating initialValue={product.rating} readonly />
+                        <p>R{product.price}.00</p>
+
+                        <button
+                          onClick={() => addCartButtonClick(product.id)}
+                          className="btn btn-primary mt-auto"
+                          style={{ marginTop: "0px" }}
                         >
-                          <img
-                            className="images-circular card-img-top mt-2"
-                            src={`http://localhost:5000/Images/${product.image}`}
-                            alt={`${product.name}`}
-                          />
-                          <div className="card-body ml-5">
-                            <h5 className="card-title">{product.name}</h5>
-                            <p className="card-text">{product.description}</p>
-                            <Rating initialValue={product.rating} readonly />
-                            <p>R{product.price}.00</p>
-                            <button
-                              onClick={() => addCartButtonClick(product.id)}
-                              className="btn CustomerButton mt-auto"
-                            >
-                              {product.carted ? "Added to cart" : "Add to cart"}
-                            </button>
-                            {role === "admin" || role === "Admin" ? (
-                              <button
-                                onClick={() => deleteProduct(product.id)}
-                                className="btn btn-warning mt-3"
-                              >
-                                Delete
-                              </button>
-                            ) : null}
-                          </div>
-                        </div>
-                      ))
-                    : null}
+                          {product.carted ? "Added to cart" : "Add to cart"}
+                        </button>
+                        <Link
+                          to={`/product/${product.id}`}
+                          className="btn btn-primary"
+                        >
+                          View Product
+                        </Link>
+                        {role === "admin" || role === "Admin" ? (
+                          <button
+                            onClick={() => deleteProduct(product.id)}
+                            className="btn btn-warning mt-3"
+                          >
+                            Delete
+                          </button>
+                        ) : null}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </>
             )}
