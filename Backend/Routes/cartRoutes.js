@@ -3,12 +3,12 @@ const router = express.Router();
 const Cart = require("../Models/Cart");
 
 router.post("/registerToCart", async (req, res) => {
-  const { id, user, cartProducts, totalPrice} = req.body;
+  const { id, username, cartProducts, totalPrice} = req.body;
 
   try {
     const cartOrder = new Cart({
       id,
-      user,
+      username,
       cartProducts,
       totalPrice
     });

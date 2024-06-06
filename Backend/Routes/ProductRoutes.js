@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
     cb(null, "public/Images");
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Use Date.now() to ensure unique filenames
+    cb(null, Date.now() + path.extname(file.originalname));
   },
 });
 
@@ -19,7 +19,7 @@ const upload = multer({ storage: storage });
 
 router.post("/registerProduct", upload.single("image"), async (req, res) => {
   const { id, name, rating, description, price } = req.body;
-  const imagePath = req.file ? req.file.filename : null; // Get the path to the uploaded image
+  const imagePath = req.file ? req.file.filename : null;
 
   try {
     const product = new Product({
@@ -46,6 +46,21 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/product/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const product = await Product.findOne({ id });
+    if (product) {
+      res.status(200).json(product);
+    } else {
+      res.status(404).json({ message: "Product not found" });
+    }
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 router.post("/deleteProduct", async (req, res) => {
   const { id } = req.body;
 
@@ -53,7 +68,6 @@ router.post("/deleteProduct", async (req, res) => {
     const product = await Product.findOne({ id });
 
     if (product) {
-      // Remove the image file from the filesystem
       if (product.image) {
         const imagePath = path.join(
           __dirname,
@@ -76,5 +90,32 @@ router.post("/deleteProduct", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+router.put("/updateProduct/:id", upload.single("image"), async (req, res) => {
+  const { id } = req.params;
+  const { name, description, price, rating } = req.body;
+  const imagePath = req.file ? req.file.filename : null;
+
+  try {
+    const product = await Product.findOne({ id });
+    if (product) {
+      product.name = name;
+      product.description = description;
+      product.price = price;
+      product.rating = rating;
+      if (imagePath) {
+        product.image = imagePath;
+      }
+
+      await product.save();
+      res.status(200).json(product);
+    } else {
+      res.status(404).json({ message: "Product not found" });
+    }
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 
 module.exports = router;

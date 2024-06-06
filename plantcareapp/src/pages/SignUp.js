@@ -60,6 +60,7 @@ const SignUp = () => {
 
   return (
     <div>
+      
       <form onSubmit={handleSubmit}>
         <Link to="../">
           <h1 className="arrow">⇦</h1>
