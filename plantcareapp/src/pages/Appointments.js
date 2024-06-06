@@ -257,16 +257,17 @@ const Appointments = () => {
               </div>
 
               {/* Input plant appointment reason */}
-              <div className="form-group" style={{ marginBottom: "30px" }}>
+              <div class="form-group">
                 <p>Appointment reason:</p>
-                <input
-                  type="text"
+                <textarea
                   className="aptCreateAppDateSelectsDate"
-                  name="plantName"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
                   placeholder="Enter the reason"
                   value={reason}
                   onChange={(e) => setReason(e.target.value)}
-                />
+                  style={{ marginBottom: "20px" }}
+                ></textarea>
               </div>
 
               {/* Input appointment date */}

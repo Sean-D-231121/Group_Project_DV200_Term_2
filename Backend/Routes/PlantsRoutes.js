@@ -31,17 +31,52 @@ router.get("/user/:userID", async (req, res) => {
 
 // Add a plant object
 router.post("/add", async (req, res) => {
-  const { userID, username, plantName, plantDescription } = req.body; // Include userID here
+  const { userID, username, plantName, plantDescription } = req.body;
 
   try {
     const plant = new Plants({
-      userID, // Make sure this matches the schema
+      userID,
       username,
       plantName,
       plantDescription,
     });
     await plant.save();
     res.status(201).json(plant);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// Update a plant object by ID
+router.put("/update/:id", async (req, res) => {
+  const { id } = req.params;
+  const { plantName, plantDescription } = req.body;
+
+  try {
+    const updatedPlant = await Plants.findByIdAndUpdate(
+      id,
+      { plantName, plantDescription },
+      { new: true }
+    );
+    if (!updatedPlant) {
+      return res.status(404).json({ message: "Plant not found" });
+    }
+    res.status(200).json(updatedPlant);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// Delete a plant object by ID
+router.delete("/delete/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const deletedPlant = await Plants.findByIdAndDelete(id);
+    if (!deletedPlant) {
+      return res.status(404).json({ message: "Plant not found" });
+    }
+    res.status(200).json({ message: "Plant deleted successfully" });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
