@@ -102,8 +102,7 @@ const PlantLibrary = () => {
   const [showForm, setShowForm] = useState(false);
   const sessionUser = sessionStorage.getItem("user");
   const [userID, setUserID] = useState("");
-  const macPort = "3001";
-  const winPort = "5000";
+  const PORT = "5000";
 
   useEffect(() => {
     if (sessionUser) {
@@ -124,7 +123,7 @@ const PlantLibrary = () => {
 
   const fetchPlants = () => {
     axios
-      .get(`http://localhost:${macPort}/api/plants/user/${userID}`)
+      .get(`http://localhost:${PORT}/api/plants/user/${userID}`)
       .then((response) => {
         setPlants(response.data);
         console.log(

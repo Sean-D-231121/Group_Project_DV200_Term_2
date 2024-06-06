@@ -4,6 +4,7 @@ import axios from "axios";
 const AppointmentItem = ({ id, plants, Reason, AppointmentDate, onDelete }) => {
   // Function to format the date
   const aptID = id;
+  const PORT = "5000";
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -17,7 +18,7 @@ const AppointmentItem = ({ id, plants, Reason, AppointmentDate, onDelete }) => {
   const handleDelete = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:3001/api/appointments/delete/${aptID}`
+        `http://localhost:${PORT}/api/appointments/delete/${aptID}`
       );
       if (response.status === 200) {
         console.log("Appointment deleted successfully");

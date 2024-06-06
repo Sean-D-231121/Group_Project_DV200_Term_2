@@ -24,8 +24,9 @@ const Appointments = () => {
   const [date, setDate] = useState("");
   const [reason, setReason] = useState("");
   const [selectedPlants, setSelectedPlants] = useState([]);
-  const macPort = "3001";
-  const winPort = "5000";
+
+  // Please change it to the corrosponding port
+  const PORT = 5000;
   const sessionUser = sessionStorage.getItem("user");
 
   useEffect(() => {
@@ -51,7 +52,7 @@ const Appointments = () => {
 
   const fetchAppointmentsWOfiltering = () => {
     axios
-      .get(`http://localhost:${macPort}/api/appointments`)
+      .get(`http://localhost:${PORT}/api/appointments`)
       .then((response) => {
         setAppointments(response.data);
         console.log(
@@ -66,7 +67,7 @@ const Appointments = () => {
 
   const fetchAppointments = () => {
     axios
-      .get(`http://localhost:${macPort}/api/appointments/user/${userID}`)
+      .get(`http://localhost:${PORT}/api/appointments/user/${userID}`)
       .then((response) => {
         setAppointments(response.data);
         setAppointmentEmpty(false);
@@ -83,7 +84,7 @@ const Appointments = () => {
 
   const fetchPlantsWOfiltering = () => {
     axios
-      .get(`http://localhost:${macPort}/api/plants`)
+      .get(`http://localhost:${PORT}/api/plants`)
       .then((response) => {
         setPlants(response.data);
         console.log("Connection to plants database:\n success");
@@ -96,7 +97,7 @@ const Appointments = () => {
 
   const fetchPlants = () => {
     axios
-      .get(`http://localhost:${macPort}/api/plants/user/${userID}`)
+      .get(`http://localhost:${PORT}/api/plants/user/${userID}`)
       .then((response) => {
         setPlants(response.data);
         console.log(
@@ -130,7 +131,7 @@ const Appointments = () => {
       console.log("Reason:", reason);
 
       const response = await axios.post(
-        `http://localhost:${macPort}/api/appointments/create`,
+        `http://localhost:${PORT}/api/appointments/create`,
         {
           userID,
           username,
