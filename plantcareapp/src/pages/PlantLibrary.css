@@ -1,3 +1,13 @@
+/* Global styles */
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* div {
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
 .plMain {
   height: 100vh;
   overflow: auto;
@@ -10,12 +20,12 @@
   margin-bottom: 50px;
 }
 
-.plLibraryAddPlamtBTN {
+.plLibraryAddPlantBTN {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  order: 1px solid #000000;
+  border: 1px solid #000000;
   background-color: #ffaaf1;
   border-radius: 25px;
   margin-left: 800px;
@@ -74,4 +84,51 @@
   order: 1px solid #000000;
   background-color: #ffaaf1;
   border-radius: 25px;
+}
+
+/* Form classes */
+.plForm {
+  width: 400px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #b7fab4;
+  border-radius: 40px;
+  margin-bottom: 50px;
+}
+.plFormBody {
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #dffede;
+  border-radius: 25px;
+}
+
+.plAddPlantTextfield {
+  width: 300px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid #000000;
+  border-radius: 25px;
+}
+
+.plAddPlantButton {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid #000000;
+  background-color: #ffaaf1;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.plAddPlantButton:hover {
+  border: 3px solid #1b8c15;
+  background-color: #aaffcd;
+  cursor: pointer;
 }
