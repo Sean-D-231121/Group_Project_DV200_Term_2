@@ -138,7 +138,11 @@ const ProductsPage = () => {
               <>
                 <div className="row mt-3 mr-5">
                   <div className="col-3">
-                    <button className="CustomerButton">My Cart</button>
+                    <Link to="/Cart">
+                      <button className=" btn btn-primary px-5 pt-3 pb-3">
+                        My Cart
+                      </button>
+                    </Link>
                   </div>
                   <div className="col-9">
                     <div className="row gap-2">
@@ -226,7 +230,7 @@ const ProductsPage = () => {
                       <div className="col-2">
                         {role === "admin" || role === "Admin" ? (
                           <button
-                            className="btn CustomerButton"
+                            className="btn btn-primary px-5 pt-3 pb-3"
                             onClick={() => {
                               setAddProduct(true);
                             }}
@@ -256,28 +260,34 @@ const ProductsPage = () => {
                         <p className="card-text">{product.description}</p>
                         <Rating initialValue={product.rating} readonly />
                         <p>R{product.price}.00</p>
-
-                        <button
-                          onClick={() => addCartButtonClick(product.id)}
-                          className="btn btn-primary mt-auto"
-                          style={{ marginTop: "0px" }}
-                        >
-                          {product.carted ? "Added to cart" : "Add to cart"}
-                        </button>
-                        <Link
-                          to={`/product/${product.id}`}
-                          className="btn btn-primary"
-                        >
-                          View Product
-                        </Link>
-                        {role === "admin" || role === "Admin" ? (
-                          <button
-                            onClick={() => deleteProduct(product.id)}
-                            className="btn btn-warning mt-3"
-                          >
-                            Delete
-                          </button>
-                        ) : null}
+                        <div className="row">
+                          <div className="col-6">
+                            <button
+                              onClick={() => addCartButtonClick(product.id)}
+                              className="btn btn-primary mx-auto"
+                            >
+                              {product.carted ? "Added to cart" : "Add to cart"}
+                            </button>
+                          </div>
+                          <div className="col-6">
+                            <Link
+                              to={`/product/${product.id}`}
+                              className="btn btn-primary"
+                            >
+                              View Product
+                            </Link>
+                          </div>
+                          <div className="col-6 mx-auto">
+                            {role === "admin" || role === "Admin" ? (
+                              <button
+                                onClick={() => deleteProduct(product.id)}
+                                className="btn btn-secondary mt-3 mx-auto"
+                              >
+                                Delete
+                              </button>
+                            ) : null}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   ))}

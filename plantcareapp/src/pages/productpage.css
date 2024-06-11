@@ -34,4 +34,18 @@
     background-color: #c55ab2 
      ;
 }
+.btn-secondary{
+    background-color: #76EA73 ;
+    border: none;
+    color: black
+}
+.btn-secondary:hover{
+    background-color: rgb(150, 240, 148) ;
+    
+}
+
+.btn-secondary:focus{
+    background-color: #239D21 
+     ;
+}
 
