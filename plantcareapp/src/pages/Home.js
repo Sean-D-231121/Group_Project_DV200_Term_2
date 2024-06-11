@@ -6,9 +6,8 @@ import "./Home.css";
 import "./Global.css";
 import UserPhoto from "../Userphoto.png";
 import MySideNav from "../Components/NavBar";
-;
+
 const Home = () => {
- 
   const [user, setUser] = useState(null);
   const [profilePhoto, setProfilePhoto] = useState(UserPhoto);
   const [appointments, setAppointments] = useState([]);
@@ -58,8 +57,7 @@ const Home = () => {
             justifyContent: "center",
             alignItems: "center",
             borderRadius: "5%",
-            marginLeft: "36%",
-            marginTop: "3%",
+            margin: "3% auto",
             boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
           }}
         >
