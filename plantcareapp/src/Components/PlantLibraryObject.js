@@ -7,9 +7,11 @@ const PlantLibraryObject = ({
   PlantID,
   PlantName,
   PlantDescription,
+  PlantImage,
   onDelete,
   onUpdate,
 }) => {
+  const PORT = "3001";
   const [isUpdateFormVisible, setIsUpdateFormVisible] = useState(false);
 
   const toggleUpdateForm = () => {
@@ -18,7 +20,9 @@ const PlantLibraryObject = ({
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3001/api/plants/delete/${PlantID}`);
+      await axios.delete(
+        `http://localhost:${PORT}/api/plants/delete/${PlantID}`
+      );
       onDelete();
     } catch (error) {
       console.error("Error deleting plant", error);
@@ -30,7 +34,13 @@ const PlantLibraryObject = ({
       <button className="plObjectCloseBTN" onClick={handleDelete}>
         Delete
       </button>
-      <div className="plObjectImage"></div>
+      <div
+        className="plObjectImage"
+        style={{
+          backgroundImage: `url(http://localhost:${PORT}/PlantImages/${PlantImage})`,
+          backgroundSize: "cover",
+        }}
+      ></div>
       <h6>{PlantName}</h6>
       <p>{PlantDescription}</p>
       <button className="plObjectViewPlantHisBTN" onClick={toggleUpdateForm}>

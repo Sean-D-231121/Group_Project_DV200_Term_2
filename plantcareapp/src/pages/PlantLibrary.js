@@ -76,6 +76,7 @@ const PlantLibrary = () => {
                   PlantID={plantObject._id}
                   PlantName={plantObject.plantName}
                   PlantDescription={plantObject.plantDescription}
+                  PlantImage={plantObject.plantImage}
                   onDelete={handleDeletePlant}
                   onUpdate={handleUpdatePlant}
                 />

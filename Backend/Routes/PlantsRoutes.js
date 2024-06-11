@@ -1,6 +1,20 @@
 const express = require("express");
 const router = express.Router();
 const Plants = require("../Models/Plants");
+const multer = require("multer");
+const path = require("path");
+
+// Multer configuration
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "public/PlantImages");
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage });
 
 // Get all plant objects
 router.get("/", async (req, res) => {
@@ -29,15 +43,17 @@ router.get("/user/:userID", async (req, res) => {
   }
 });
 
-// Add a plant object
-router.post("/add", async (req, res) => {
+// Add a plant object with image upload
+router.post("/add", upload.single("plantImage"), async (req, res) => {
   const { userID, username, plantName, plantDescription } = req.body;
+  const imagePath = req.file ? req.file.filename : null;
 
   try {
     const plant = new Plants({
       userID,
       username,
       plantName,
+      plantImage: imagePath,
       plantDescription,
     });
     await plant.save();

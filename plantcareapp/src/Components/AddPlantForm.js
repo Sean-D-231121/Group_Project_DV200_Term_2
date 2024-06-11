@@ -7,6 +7,7 @@ const AddPlantForm = ({ onSubmit, onClose }) => {
   const [username, setUsername] = useState("");
   const [plantName, setPlantName] = useState("");
   const [plantDescription, setPlantDescription] = useState("");
+  const [plantImage, setPlantImage] = useState(null);
   const [message, setMessage] = useState("");
 
   const sessionUser = sessionStorage.getItem("user");
@@ -17,18 +18,27 @@ const AddPlantForm = ({ onSubmit, onClose }) => {
       setUserID(currentUser._id);
       setUsername(currentUser.username);
     }
-  }, []);
+  }, [sessionUser]);
 
   const handleAddPlant = async (event) => {
     event.preventDefault();
+    const formData = new FormData();
+    formData.append("userID", userID);
+    formData.append("username", username);
+    formData.append("plantName", plantName);
+    formData.append("plantDescription", plantDescription);
+    if (plantImage) {
+      formData.append("plantImage", plantImage);
+    }
+
     try {
       const response = await axios.post(
         `http://localhost:3001/api/plants/add`,
+        formData,
         {
-          userID,
-          username,
-          plantName,
-          plantDescription,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         }
       );
 
@@ -51,14 +61,13 @@ const AddPlantForm = ({ onSubmit, onClose }) => {
       <form onSubmit={handleAddPlant} className="plFormBody">
         <div className="form-group" style={{ marginBottom: "30px" }}>
           <p>Plant photo:</p>
-          <div class="form-group">
-            <label for="exampleFormControlFile1">
-              Choose photo for your plant
-            </label>
+          <div className="form-group">
             <input
               type="file"
-              class="form-control-file"
+              className="form-control-file"
               id="exampleFormControlFile1"
+              style={{ width: "300px", fontSize: "14px" }}
+              onChange={(e) => setPlantImage(e.target.files[0])}
             />
           </div>
         </div>
