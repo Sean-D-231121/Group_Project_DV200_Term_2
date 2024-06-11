@@ -12,8 +12,7 @@ const AddPlantForm = ({ onSubmit, onClose }) => {
   const [plantDescription, setPlantDescription] = useState("");
   const [message, setMessage] = useState("");
 
-  const macPort = "3001";
-  const winPort = "5000";
+  const PORT = "5000";
   const sessionUser = sessionStorage.getItem("user");
 
   useEffect(() => {
@@ -33,7 +32,7 @@ const AddPlantForm = ({ onSubmit, onClose }) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:${macPort}/api/plants/add`,
+        `http://localhost:${PORT}/api/plants/add`,
         {
           userID,
           username,
