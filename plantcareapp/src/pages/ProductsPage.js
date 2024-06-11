@@ -9,34 +9,47 @@ import { Link } from "react-router-dom";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
-  ;
   const [addProduct, setAddProduct] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [user, setUser] = useState([]);
   const [role, setRole] = useState("admin");
+  const [searchQuery, setSearchQuery] = useState(""); // Add search query state
+
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/products")
-      .then((response) => {
+    const fetchProductsAndCart = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/products");
+        const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
         const productsWithCarted = response.data.map((product) => ({
           ...product,
-          carted: false, 
+          carted: cart.some((cartItem) => cartItem.id === product.id),
         }));
+
         setProducts(productsWithCarted);
         setFilteredProducts(productsWithCarted);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("There was an error fetching the products!", error);
-      });
+      }
 
-    const storedUser = sessionStorage.getItem("user");
-    if (storedUser) {
-      const parsedUser = JSON.parse(storedUser);
-      setUser(parsedUser);
-      setRole(parsedUser.usertype); // Set role from sessionStorage
-    }
-    
+      const storedUser = sessionStorage.getItem("user");
+      if (storedUser) {
+        const parsedUser = JSON.parse(storedUser);
+        setUser(parsedUser);
+        setRole(parsedUser.usertype); // Set role from sessionStorage
+      }
+    };
+
+    fetchProductsAndCart();
   }, []);
+
+  useEffect(() => {
+    // Filter products based on search query
+    const filtered = products.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredProducts(filtered);
+  }, [searchQuery, products]);
 
   const addCartButtonClick = (productId) => {
     setProducts((prevProducts) =>
@@ -46,21 +59,26 @@ const ProductsPage = () => {
           : product
       )
     );
-    
+
     const clickedProduct = products.find((product) => product.id === productId);
     if (clickedProduct) {
       const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
       const productInCart = cart.find((product) => product.id === productId);
-      setFilteredProducts(products);
+
+      let updatedCart;
       if (productInCart) {
-        const updatedCart = cart.filter((product) => product.id !== productId);
-        sessionStorage.setItem("cart", JSON.stringify(updatedCart));
-        
+        updatedCart = cart.filter((product) => product.id !== productId);
       } else {
-        cart.push(clickedProduct);
-        sessionStorage.setItem("cart", JSON.stringify(cart));
+        updatedCart = [...cart, clickedProduct];
       }
-      ;
+      sessionStorage.setItem("cart", JSON.stringify(updatedCart));
+
+      const updatedFilteredProducts = filteredProducts.map((product) =>
+        product.id === productId
+          ? { ...product, carted: !product.carted } // Toggle carted state
+          : product
+      );
+      setFilteredProducts(updatedFilteredProducts);
     }
   };
 
@@ -192,18 +210,17 @@ const ProductsPage = () => {
                           </ul>
                         </div>
                       </div>
-                      <div className="col-2 gap-2">
-                        <label
-                          htmlFor="exampleFormControlInput1"
-                          className="form-label"
-                        >
+                      <div className="col-4 gap-2">
+                        <label htmlFor="searchInput" className="form-label">
                           Search
                         </label>
                         <input
                           type="text"
                           className="form-control"
-                          id="exampleFormControlInput1"
+                          id="searchInput"
                           placeholder="Search"
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)} // Handle search input change
                         />
                       </div>
                       <div className="col-2">

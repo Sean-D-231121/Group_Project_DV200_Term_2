@@ -52,73 +52,75 @@ const EditProduct = ({ product, setEditMode, setProduct }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="productBlock">
-        <h1 className="signh1">Edit Product</h1>
-        <div className="signupdiv1">
-          <p className="signuptext">Choose an image (optional)</p>
-          <input
-            className="signupinput"
-            type="file"
-            onChange={(e) => setImage(e.target.files[0])}
-          />
-        </div>
-        <div className="signupdiv1">
-          <p className="signuptext">Product name</p>
-          <input
-            className="signupinput"
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div className="signupdiv1">
-          <p className="signuptext">Description</p>
-          <textarea
-            className="textArea"
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </div>
-        <div className="signupdiv1">
-          <p className="signuptext">Rating</p>
-          <input
-            className="signupinput"
-            type="number"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-          />
-        </div>
-        <div className="signupdiv1">
-          <p className="signuptext">Price</p>
-          <input
-            className="signupinput"
-            type="number"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-          />
-        </div>
-        <div className="row mx-auto gap-5">
-          <div className="col-3">
-            <button type="submit" className="signupbutton">
-              Update
-            </button>
+    <div className="container ">
+      <form onSubmit={handleSubmit}>
+        <div className="card w-100 h-100 px-5 pt-2 mx-auto">
+          <h1 className="signh1">Edit Product</h1>
+          <div className="signupdiv1">
+            <p className="signuptext">Choose an image </p>
+            <input
+              className="signupinput"
+              type="file"
+              onChange={(e) => setImage(e.target.files[0])}
+            />
           </div>
-          <div className="col-3">
-            <button
-              type="button"
-              className="signupbutton"
-              onClick={() => setEditMode(false)}
-            >
-              Cancel
-            </button>
+          <div className="signupdiv1">
+            <p className="signuptext">Product name</p>
+            <input
+              className="signupinput"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
-        </div>
+          <div className="signupdiv1">
+            <p className="signuptext">Description</p>
+            <textarea
+              className="textArea"
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </div>
+          <div className="signupdiv1">
+            <p className="signuptext">Rating</p>
+            <input
+              className="signupinput"
+              type="number"
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
+            />
+          </div>
+          <div className="signupdiv1">
+            <p className="signuptext">Price</p>
+            <input
+              className="signupinput"
+              type="number"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
+          </div>
+          <div className="row mx-auto gap-5">
+            <div className="col-3">
+              <button type="submit" className="btn btn-primary mb-5">
+                Update
+              </button>
+            </div>
+            <div className="col-3">
+              <button
+                type="button"
+                className="btn btn-primary mb-5"
+                onClick={() => setEditMode(false)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
 
-        {message && <p className="message">{message}</p>}
-      </div>
-    </form>
+          {message && <p className="message">{message}</p>}
+        </div>
+      </form>
+    </div>
   );
 };
 
