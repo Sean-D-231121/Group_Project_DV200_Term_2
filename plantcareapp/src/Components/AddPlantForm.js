@@ -50,6 +50,17 @@ const AddPlantForm = ({ onSubmit, onClose }) => {
       <h3>Add a plant</h3>
       <form onSubmit={handleAddPlant} className="plFormBody">
         <div className="form-group" style={{ marginBottom: "30px" }}>
+          <p>Plant photo:</p>
+          <div class="form-group">
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="exampleFormControlFile1"
+            />
+          </div>
+        </div>
+        <div className="form-group" style={{ marginBottom: "30px" }}>
           <p>Plant name:</p>
           <input
             type="text"
