@@ -127,7 +127,7 @@ const ProductsPage = () => {
     <>
       <MySideNav />
       <div className="webpage-frame">
-        <div className="container-fluid ml-5">
+        <div className="container ml-5">
           <div className="col-12">
             <h3>Store</h3>
             {(role === "admin" || role === "Admin") && addProduct === true ? (
