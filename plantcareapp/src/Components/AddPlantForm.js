@@ -52,7 +52,9 @@ const AddPlantForm = ({ onSubmit, onClose }) => {
         <div className="form-group" style={{ marginBottom: "30px" }}>
           <p>Plant photo:</p>
           <div class="form-group">
-            <label for="exampleFormControlFile1">Example file input</label>
+            <label for="exampleFormControlFile1">
+              Choose photo for your plant
+            </label>
             <input
               type="file"
               class="form-control-file"
