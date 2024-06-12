@@ -26,7 +26,7 @@ const Appointments = () => {
   const [selectedPlants, setSelectedPlants] = useState([]);
 
   // Please change it to the corrosponding port
-  const PORT = 3001;
+  const PORT = 5000;
   const sessionUser = sessionStorage.getItem("user");
 
   useEffect(() => {

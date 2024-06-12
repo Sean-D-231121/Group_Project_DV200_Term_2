@@ -10,6 +10,8 @@ const AddPlantForm = ({ onSubmit, onClose }) => {
   const [plantImage, setPlantImage] = useState(null);
   const [message, setMessage] = useState("");
 
+  const PORT = "5000";
+
   const sessionUser = sessionStorage.getItem("user");
 
   useEffect(() => {
@@ -33,7 +35,7 @@ const AddPlantForm = ({ onSubmit, onClose }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:3001/api/plants/add`,
+        `http://localhost:${PORT}/api/plants/add`,
         formData,
         {
           headers: {

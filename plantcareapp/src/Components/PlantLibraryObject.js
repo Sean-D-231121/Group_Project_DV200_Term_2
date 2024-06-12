@@ -11,7 +11,7 @@ const PlantLibraryObject = ({
   onDelete,
   onUpdate,
 }) => {
-  const PORT = "3001";
+  const PORT = "5000";
   const [isUpdateFormVisible, setIsUpdateFormVisible] = useState(false);
 
   const toggleUpdateForm = () => {

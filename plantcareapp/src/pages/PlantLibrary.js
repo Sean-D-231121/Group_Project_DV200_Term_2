@@ -12,7 +12,7 @@ const PlantLibrary = () => {
   const [showForm, setShowForm] = useState(false);
   const sessionUser = sessionStorage.getItem("user");
   const [userID, setUserID] = useState("");
-  const PORT = "3001";
+  const PORT = "5000";
 
   useEffect(() => {
     if (sessionUser) {
