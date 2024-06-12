@@ -62,7 +62,13 @@
   border: 1px solid #000000;
   background-color: #ffaaf1;
   border-radius: 25px;
-  margin-left: 223px;
+  margin-left: 175px;
+  transition: 0.3s;
+}
+.plObjectCloseBTN:hover {
+  border: 3px solid #000000;
+  background-color: #ff0000;
+  color: white;
 }
 
 .plObjectImage {
@@ -72,7 +78,7 @@
   border-radius: 100px;
   background-color: white;
   margin: 0 auto;
-  margin-top: -20px;
+  margin-top: 0px;
   margin-bottom: 20px;
 }
 
@@ -81,8 +87,15 @@
   padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  order: 1px solid #000000;
+  border: 1px solid #000000;
   background-color: #ffaaf1;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.plObjectViewPlantHisBTN:hover {
+  border: 3px solid #000000;
+  background-color: #ff69e6;
   border-radius: 25px;
 }
 
@@ -131,4 +144,25 @@
   border: 3px solid #1b8c15;
   background-color: #aaffcd;
   cursor: pointer;
+}
+
+/* Update plant object */
+.plUpdateBody {
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  border: 1px solid #000000;
+  margin-top: 30px;
+}
+.plUpdatePlantTextField {
+  width: 220px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid #000000;
+  border-radius: 25px;
 }
