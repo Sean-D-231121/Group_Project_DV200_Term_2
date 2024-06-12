@@ -6,7 +6,7 @@ const UpdatePlantForm = ({ plantId, onClose, onUpdate }) => {
   const [plantName, setPlantName] = useState("");
   const [plantDescription, setPlantDescription] = useState("");
   const [message, setMessage] = useState("");
-  const PORT = "5000";
+  const PORT = "3001";
 
   const handleUpdatePlant = async (event) => {
     event.preventDefault();
