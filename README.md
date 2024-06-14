@@ -88,7 +88,7 @@ From secure user authentication to advanced product browsing and plant managemen
 The journey of developing Botania has been both challenging and rewarding, pushing us to hone our skills in front-end and back-end development, user interface design, and data integration. By leveraging modern technologies and adhering to best coding practices, we have built a robust and scalable platform that meets the diverse needs of our users.
 
 ## Authors
-Anemi Breytenbach, Ruan Klopper, Sean Dubbelman, Phillipus Van der Hoven
+Anemi Breytenbach (Home, Settings, Navbar), Ruan Klopper (Appointments, Plant Library), Sean Dubbelman (Store, Cart), Phillipus Van der Hoven (Splash, Sign In, Sign Up)
 
 
 ## Acknowledgements
