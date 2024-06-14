@@ -1,6 +1,7 @@
-## <p align="center" style="text-decoration: none !important;padding:0;margin:0;"> <br> 221119 <br>DV 200 Term 2</p>
+## <p align="center" style="text-decoration: none !important;padding:0;margin:0;"> <br>DV 200 Term 2</p>
 
-<p align="center">
+<p align="center">[Logosmall](https://github.com/Sean-D-231121/Group_Project_DV200_Term_2/assets/125360666/763e8af6-1fe4-449d-9cab-496213b6338a)
+
 </p>
 
 ## <p align="center" style="text-decoration: none !important;padding:0;margin:0;">Interactive Dashboard</p>
