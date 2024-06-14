@@ -1,15 +1,14 @@
 ## <p align="center" style="text-decoration: none !important;padding:0;margin:0;"> <br>DV 200 Term 2</p>
 
-<p align="center">[Logosmall](https://github.com/Sean-D-231121/Group_Project_DV200_Term_2/assets/125360666/763e8af6-1fe4-449d-9cab-496213b6338a)
-
+<p align="center">
+ https://drive.google.com/drive/u/2/home
 </p>
 
-## <p align="center" style="text-decoration: none !important;padding:0;margin:0;">Interactive Dashboard</p>
+## <p align="center" style="text-decoration: none !important;padding:0;margin:0;">Dashboard</p>
 
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Product mockup](#product-mockup)
   * [Project description](#project-description)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
@@ -18,18 +17,13 @@
 * [Features and Functionality](#features-and-functionality)
 * [Concept Process](#concept-process)
    * [Ideation](#ideation)
-   * [Wireframes](#wireframes)
-   * [Custon UI](#custom-ui)
 * [Development Process](#development-process)
     * [Highlights](#highlights)
     * [Challenges](#challenges)
 * [Future Implementation](#future-implementation)
 * [Final Outcome](#final-outcome)
-    * [Mockup Video](#mockup-video)
-    * [Video Demonstration](#demonstration-video)
+    * [Video Presentation](#presentation-video)
 * [Conclusion](#conclusion)
-* [License](#license)
-* [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
 ## About the project:
@@ -42,7 +36,7 @@ As a data-driven developer, my mission was to harness the power of Big Data to c
 I carefully selected an API created by GenshinDev, based on the content of the game Genshin Impact by Hoyoverse. With the API in hand, I delved into coding, focusing on efficiently handling large data volumes and creating user-friendly visualizations for data exploration and insights.
 
 ### Built with:
-This project is built with React and Node.js, as well as advanced Javascript and Chart.js.
+This project is built with React and Node.js, as well as Javascript and appropriate css.
 
 ## Getting Started:
 
@@ -55,10 +49,8 @@ This project is built with React and Node.js, as well as advanced Javascript and
 ### How to install:
 
 * React Bootstrap <br> `npm install react-bootstrap bootstrap`
-* React Chartjs 2 <br> `npm i react-chartjs-2 chart.js`
 * React Router DOM <br> `npm i react-router-dom`
 * Axios <br> `npm i axios`
-* Chart.js <br> `npm i chart.js`
 * Bootstrap <br> `npm i bootstrap`
 
 ## Features and Functionality:
@@ -74,19 +66,6 @@ The timeline page allows the user to select a character from a dropdown list, an
 ### Ideation:
 
 During the ideation phase of the project, I decided to use the GenshinDev API, which provides data for the game Genshin Impact by Hoyoverse. My initial plan was to create a team builder for the game's characters, using comparative data to show which characters work better together and which should be replaced. This data would be displayed using a bar chart to show the percentage of how well each character fits within the team, and a radar chart to show their skill strengths. I also planned to display a timeline showing when each character was the most popular in the game's most difficult combat arena, "the abyss." While some aspects of the project evolved during development, these core ideas remained the same.
-
-### Wireframes:
-
-![Home](./Wireframes/Homepage.png)
-![Compare](./Wireframes/Comparison%20page.png)
-![Timeline](./Wireframes/Timeline%20page.png)
-
-### Custom UI:
-
-<img src="https://static.wikia.nocookie.net/gensin-impact/images/9/9c/Icon_Paimon_Menu.png/revision/latest?cb=20210605102449"  height="75">
-<img src="https://static.wikia.nocookie.net/gensin-impact/images/3/3c/Achievement_Stone_Harbor%27s_Nostalgia_Series_I.png/revision/latest?cb=20210702105315" height="75">
-<img src="https://static.wikia.nocookie.net/gensin-impact/images/0/00/Achievement_Meetings_in_Outrealm_Series_I.png/revision/latest?cb=20210702105309"  height="75">
-<img src="https://static.wikia.nocookie.net/gensin-impact/images/4/4d/Achievement_Sumeru_The_Gilded_Desert_Series_I.png/revision/latest?cb=20220928034653"  height="75">
 
 ## Development Process
 
@@ -114,18 +93,12 @@ Another area where I would like to expand and enhance the project is in making i
 
 Finally, I would also like to explore the possibility of incorporating an official API from Hoyoverse, if and when one becomes available. This would allow me to expand the functionality of the site even further, providing users with access to a wider range of data and insights related to the Hoyoverse platform. By incorporating an official API, I would be able to further enhance the usefulness and relevance of the website, while also demonstrating my proficiency and versatility as a developer.
 
-## Final Outcome
-
-### Mockup Video
+## Final Outcomes
 
 
-https://user-images.githubusercontent.com/109971278/230770574-3e270853-fc89-4135-88d1-3e389ddd4074.mp4
+### Presentation Video
 
-
-### Demonstration Video
-
-
-https://user-images.githubusercontent.com/109971278/230775565-568ab52f-46fa-4170-a28f-cec0b8478b82.mp4
+https://drive.google.com/file/d/1-SzDB_SKwGnQvIuK0Xe_k9z-_oHvmnSL/view
 
 
 ## Conclusion
@@ -141,10 +114,6 @@ Overall, this project has been an incredibly fulfilling experience, and I am eag
 ## Authors
 Mareli Lourens - [Find me on Github](https://github.com/MareliLourens)
 
-## Contact
-Mareli Lourens - [Email](mailto:221119@virtualwindow.co.za)
-<br>
-Project Link - https://github.com/MareliLourens/dv_200_term_1.git
 
 ## Acknowledgements
 * [Genshin Impact](https://genshin.hoyoverse.com/en/) <!-- OW reference: HoYoverse, Shanghai Miha Touring Film Technology Co., Ltd. 2020. Genshin Impact. 4.1. GeForce Now, PlayStation 5, PlayStation 4, Android, Microsoft Windows, iOS.mainland China: HoYoverse, worldwide:Cognosphere Pte. Ltd. -->
