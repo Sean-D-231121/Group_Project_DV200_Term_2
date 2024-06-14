@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Splash.css";
@@ -12,6 +12,14 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
+  const [usertype, setUserType] = useState("");
+
+  useEffect(() => {
+    const storedRole = sessionStorage.getItem("role");
+    if (storedRole) {
+      setUserType(storedRole);
+    }
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,16 +35,20 @@ const SignUp = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/users/register", {
-        name,
-        username,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:5000/api/users/register",
+        {
+          name,
+          username,
+          email,
+          password,
+          usertype,
+        }
+      );
 
       if (response.status === 201) {
         setMessage("User created successfully");
-        setTimeout(() => navigate("/home"), 1000); // Navigate after a short delay
+        setTimeout(() => navigate("/home"), 1000);
       } else {
         setMessage("Error creating user");
       }
@@ -48,6 +60,7 @@ const SignUp = () => {
 
   return (
     <div>
+      
       <form onSubmit={handleSubmit}>
         <Link to="../">
           <h1 className="arrow">⇦</h1>

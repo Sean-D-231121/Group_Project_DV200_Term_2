@@ -4,7 +4,7 @@ const User = require('../Models/User'); // Ensure the path to the User model is 
 
 // Create new user
 router.post('/register', async (req, res) => {
-    const { username, name, email, password } = req.body;
+    const { username, name, email, password, usertype} = req.body;
 
     try {
         // Check if username or email already exists
@@ -14,7 +14,7 @@ router.post('/register', async (req, res) => {
         }
 
         // Create new user
-        const user = new User({ username, name, email, password });
+        const user = new User({ username, name, email, password, usertype});
         await user.save();
         res.status(201).json(user);
     } catch (err) {
@@ -48,5 +48,7 @@ router.post('/signin', async (req, res) => {
         res.status(500).json({ error: "Sign in failed" });
     }
 });
+
+
 
 module.exports = router;

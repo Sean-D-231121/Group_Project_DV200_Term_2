@@ -9,12 +9,45 @@
     font-size: 3vh;
 }
 .images-circular{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto;
+    
 }
 .card{
     background-color: #DFFEDE;
     border-radius: 30px;
     
 }
+.btn-primary {
+  margin-top: 20px;
+  background-color: #FFAAF1 ;
+  border: none;
+  color: black
+}
+.btn-primary:hover{
+    background-color: #f070d8;
+    color: black
+}
+
+.btn-primary:focus{
+    background-color: #c55ab2 
+     ;
+}
+.btn-secondary{
+    background-color: #76EA73 ;
+    border: none;
+    color: black
+}
+.btn-secondary:hover{
+    background-color: rgb(150, 240, 148) ;
+    
+}
+
+.btn-secondary:focus{
+    background-color: #239D21 
+     ;
+}
+
+
+

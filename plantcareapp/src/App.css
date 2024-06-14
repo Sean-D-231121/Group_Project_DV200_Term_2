@@ -15,7 +15,7 @@ body{
   text-align: center;
   background-color: #B9F9B8 !important; /* Change background color to green */
   font-weight: 500;
-  height: 3700px;
+  height: 100vh;
 }
 
 .App-header {
@@ -37,5 +37,6 @@ body{
   text-align: center;
   background-color: #B9F9B8 !important; /* Change background color to green */
   font-weight: 500;
-  height: 3700px;
+  height: 100vh;
+  position: fixed;
 }

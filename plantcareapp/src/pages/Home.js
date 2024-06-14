@@ -57,8 +57,7 @@ const Home = () => {
             justifyContent: "center",
             alignItems: "center",
             borderRadius: "5%",
-            marginLeft: "36%",
-            marginTop: "3%",
+            margin: "3% auto",
             boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
           }}
         >
