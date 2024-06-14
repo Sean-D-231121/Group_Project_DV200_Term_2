@@ -1,9 +1,5 @@
 ## <p align="center" style="text-decoration: none !important;padding:0;margin:0;"> <br>DV 200 Term 2</p>
 
-<p align="center">
- https://drive.google.com/drive/u/2/home
-</p>
-
 ## <p align="center" style="text-decoration: none !important;padding:0;margin:0;">Dashboard</p>
 
 ## Table of Contents
@@ -27,9 +23,6 @@
 * [Acknowledgements](#acknowledgements)
 
 ## About the project:
-
-### Product mockup:
-![Mockup](./Wireframes/product_mockup.png)
 
 ### Project description:
 As a data-driven developer, my mission was to harness the power of Big Data to create a web application that could analyze and visualize vast data sets in a meaningful way. I eagerly embraced the challenge and explored the world of APIs. Recognizing the overwhelming amount of available information, my goal was to develop an intelligent algorithm that could uncover hidden patterns and connections within the data.
@@ -76,14 +69,6 @@ Personally, I found the experience of working on this project to be immensely re
 Another aspect of the project that I found particularly enjoyable was the chance to further improve my understanding of APIs. As someone who has worked with APIs in the past, I was already familiar with the basic concepts and principles involved. However, this project allowed me to delve deeper into the topic and gain a more nuanced understanding of how APIs work, how to use them effectively, and how to troubleshoot issues that might arise.
 
 Overall, I feel that this project was an incredibly valuable learning experience for me. Not only did it allow me to expand my skill set and gain a deeper understanding of key concepts and techniques, but it also gave me the opportunity to work on a real-world project with practical applications. I look forward to building on what I've learned and continuing to grow and develop as a programmer and developer in the future.
-
-### Challenges
-
-Throughout the course of this project, I faced a number of challenges that tested my skills and pushed me out of my comfort zone. One of the most significant struggles I encountered was related to the API I was working with. Despite my previous experience working with APIs, I found that the structure of this particular API was quite different from what I was used to. This initially threw me off and made it difficult for me to get the API to work as intended.
-
-Another significant challenge I faced during the project was related to the charts that I was working with. Specifically, I struggled with figuring out how to let the charts change dynamically in response to user input. This required a deep understanding of the underlying code that powered the charts, as well as an ability to think creatively about how to implement dynamic functionality.
-
-Overall, while the project presented a number of significant challenges, I feel that it was an incredibly valuable learning experience for me. Through struggling with issues related to the API and the charts, I was able to push my boundaries as a developer and gain new insights into how to approach complex problems. Looking back on the project, I feel a sense of pride in what I was able to accomplish, and I'm excited to apply what I've learned to future projects and challenges.
 
 ## Future Implementation
 
