@@ -1,7 +1,6 @@
-## <p align="center" style="text-decoration: none !important;padding:0;margin:0;">Mareli Lourens <br> 221119 <br> Interactive Development 200 - Term 1</p>
+## <p align="center" style="text-decoration: none !important;padding:0;margin:0;"> <br> 221119 <br>DV 200 Term 2</p>
 
 <p align="center">
- ![Logosmall](https://github.com/Sean-D-231121/Group_Project_DV200_Term_2/assets/125360666/ed749159-0bcb-4f25-ba97-fbdfdb957900)
 </p>
 
 ## <p align="center" style="text-decoration: none !important;padding:0;margin:0;">Interactive Dashboard</p>
