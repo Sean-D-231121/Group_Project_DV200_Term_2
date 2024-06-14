@@ -13,9 +13,6 @@
 * [Features and Functionality](#features-and-functionality)
 * [Concept Process](#concept-process)
    * [Ideation](#ideation)
-* [Development Process](#development-process)
-    * [Highlights](#highlights)
-    * [Challenges](#challenges)
 * [Future Implementation](#future-implementation)
 * [Final Outcome](#final-outcome)
     * [Video Presentation](#presentation-video)
@@ -29,7 +26,7 @@ As a data-driven developer, my mission was to harness the power of Big Data to c
 I carefully selected an API created by GenshinDev, based on the content of the game Genshin Impact by Hoyoverse. With the API in hand, I delved into coding, focusing on efficiently handling large data volumes and creating user-friendly visualizations for data exploration and insights.
 
 ### Built with:
-This project is built with React and Node.js, as well as Javascript and appropriate css.
+This project is built with Node.js and React, as well as Javascript and appropriate css. Express.js and MongoDB were also used
 
 ## Getting Started:
 
@@ -45,62 +42,54 @@ This project is built with React and Node.js, as well as Javascript and appropri
 * React Router DOM <br> `npm i react-router-dom`
 * Axios <br> `npm i axios`
 * Bootstrap <br> `npm i bootstrap`
+* Express <br> `npm i express`
 
 ## Features and Functionality:
 
-The web application consists of three main pages. The home page displays all the characters from the game, allowing the user to select four of them to create a team. As the user clicks on each character, information about them is displayed in the bottom right corner, and a chart dynamically shows the rarity of the selected characters.
+In this project, users are greeted with sign-up and sign-in screens upon entering the application. The app features product screens where users can purchase items, leave comments, and add products to their cart. Additionally, users can create new products.
 
-On the compare page, the user can select two characters from dropdown lists to display data about them, as well as three charts showing their hit damage in bar, pie, and polar chart formats.
+Users can sort products using various filters and add plants to their personal library. The app also allows users to create appointments for their plants.
 
-The timeline page allows the user to select a character from a dropdown list, and then displays all the weapons with the same weapon type as the selected character. At the bottom of the page, a line chart displays the base attacks and rarity of those weapons.
+The home screen displays user information, while the settings screen enables users to update their details.
 
 ## Concept Process:
 
 ### Ideation:
 
-During the ideation phase of the project, I decided to use the GenshinDev API, which provides data for the game Genshin Impact by Hoyoverse. My initial plan was to create a team builder for the game's characters, using comparative data to show which characters work better together and which should be replaced. This data would be displayed using a bar chart to show the percentage of how well each character fits within the team, and a radar chart to show their skill strengths. I also planned to display a timeline showing when each character was the most popular in the game's most difficult combat arena, "the abyss." While some aspects of the project evolved during development, these core ideas remained the same.
-
-## Development Process
-
-### Highlights
-
-Personally, I found the experience of working on this project to be immensely rewarding. One of the key highlights for me was the opportunity to learn a new programming language, React.
-
-Another aspect of the project that I found particularly enjoyable was the chance to further improve my understanding of APIs. As someone who has worked with APIs in the past, I was already familiar with the basic concepts and principles involved. However, this project allowed me to delve deeper into the topic and gain a more nuanced understanding of how APIs work, how to use them effectively, and how to troubleshoot issues that might arise.
-
-Overall, I feel that this project was an incredibly valuable learning experience for me. Not only did it allow me to expand my skill set and gain a deeper understanding of key concepts and techniques, but it also gave me the opportunity to work on a real-world project with practical applications. I look forward to building on what I've learned and continuing to grow and develop as a programmer and developer in the future.
+To create an intuitive and comprehensive web application that allows users to purchase products, manage their plants, and schedule appointments for plant care, all within a seamless user experience.
 
 ## Future Implementation
 
-Reflecting on my work on this project, there are several areas where I feel there is room for improvement and further development. One of the key areas where I would like to focus in the future is on stabilizing the code and improving consistency. While I was able to get the code working effectively for the purposes of this project, I feel that there is room for improvement in terms of streamlining the code, making it more efficient, and reducing redundancies. In addition, I would like to develop a more consistent coding style and documentation approach, to make the code more accessible to others and easier to maintain over time.
+Community Features:
+Expanding the application to include community features would greatly enhance user engagement and provide a platform for knowledge sharing. Users could join plant care communities based on their interests or the types of plants they own. These communities would allow users to share tips, ask questions, and provide support to each other. For instance, a user struggling with a particular plant could post a query and receive advice from more experienced plant enthusiasts. Additionally, the application could feature discussion boards, live chat options, and scheduled webinars or virtual meetups hosted by plant care experts. This social aspect would not only help users improve their plant care skills but also foster a sense of belonging and camaraderie among plant lovers.
 
-Another area where I would like to expand and enhance the project is in making it more interactive and engaging for users. While the website is functional and provides a useful service, I believe that there is room to add more interactivity and animation to the site, in order to make it more visually appealing and engaging for users. This might involve developing new features and functionalities, such as interactive maps or dynamic data visualizations, or adding subtle animations and effects to various elements of the site.
+Advanced Analytics:
+Incorporating advanced analytics into the application would provide users with valuable insights and personalized recommendations based on their activity. By analyzing user data such as purchase history, plant care routines, and engagement with the application, the system could offer tailored advice to enhance the user experience. For example, the application could suggest optimal watering schedules, fertilizer types, or alert users to seasonal care tips specific to their plants. Furthermore, these analytics could help users track their progress over time, identify patterns in plant health, and predict potential issues before they arise. This data-driven approach would empower users to make informed decisions, ultimately leading to healthier and more thriving plants.
 
-Finally, I would also like to explore the possibility of incorporating an official API from Hoyoverse, if and when one becomes available. This would allow me to expand the functionality of the site even further, providing users with access to a wider range of data and insights related to the Hoyoverse platform. By incorporating an official API, I would be able to further enhance the usefulness and relevance of the website, while also demonstrating my proficiency and versatility as a developer.
+Integration with Smart Devices:
+Connecting the application with smart plant care devices represents a significant leap towards automated and precise plant management. These smart devices, such as moisture sensors, light meters, and automated watering systems, could be integrated with the application to provide real-time monitoring and care. Users would be able to receive instant notifications about their plants' needs, such as low moisture levels or insufficient light exposure. Additionally, the application could automate certain tasks, like adjusting light settings or initiating watering cycles, based on the data received from these devices. This integration would not only make plant care more convenient but also ensure that plants receive the exact care they need, leading to better growth and health outcomes. Furthermore, the application could compile data from these smart devices to offer users comprehensive reports on their plants' conditions, helping them to optimize their care routines.
 
 ## Final Outcomes
 
 
-### Presentation Video
-
+### Presentation Video & Slides
+Video:
 https://drive.google.com/file/d/1-SzDB_SKwGnQvIuK0Xe_k9z-_oHvmnSL/view
+
+Slides:
+https://docs.google.com/presentation/d/1n7xRndyPAb6Eo9yABtLYs8tIj7JsfW8kQ1W-4a09kvs/edit?usp=sharing
 
 
 ## Conclusion
-This project has been an incredible learning experience for me, and I am truly grateful for the opportunity to work on it. Throughout the course of the project, I have learned so much, from technical skills to project management and collaboration.
+Botania represents a collaborative effort to create a cutting-edge web application that integrates product management and plant care functionalities in a seamless, user-friendly interface. Through our group's collective coding expertise and innovative thinking, we have developed an application that not only simplifies the shopping and plant care processes but also enriches the user experience.
 
-Working on this project has allowed me to put into practice many of the concepts and techniques I have learned in my studies, and it has also challenged me to expand my knowledge and skills. From developing the initial idea to designing and implementing the project, I have gained a deeper understanding of the software development process and the importance of effective communication and teamwork.
+From secure user authentication to advanced product browsing and plant management features, Botania provides users with a comprehensive tool for their gardening and shopping needs. Our future enhancements, including community features, advanced analytics, and smart device integration, promise to further elevate the application's functionality and user engagement.
 
-I am particularly proud of the progress I have made in developing my programming skills. As someone who was relatively new to coding at the start of this project, I am thrilled with the progress I have made and the many new tools and techniques I have learned along the way. I have also gained a greater appreciation for the importance of testing and debugging, and how these skills are critical to developing high-quality software.
-
-Overall, this project has been an incredibly fulfilling experience, and I am eager to continue working on it and implementing new features and improvements in the future. I believe that this project has not only helped me to develop my technical skills, but has also given me valuable experience working in a team environment and managing a project from start to finish. I am excited to take these skills and experiences with me as I move forward in my career, and I am confident that they will serve me well in whatever challenges lie ahead.
-
+The journey of developing Botania has been both challenging and rewarding, pushing us to hone our skills in front-end and back-end development, user interface design, and data integration. By leveraging modern technologies and adhering to best coding practices, we have built a robust and scalable platform that meets the diverse needs of our users.
 
 ## Authors
-Mareli Lourens - [Find me on Github](https://github.com/MareliLourens)
+Anemi Breytenbach, Ruan Klopper, Sean Dubbelman, Phillipus Van der Hoven
 
 
 ## Acknowledgements
-* [Genshin Impact](https://genshin.hoyoverse.com/en/) <!-- OW reference: HoYoverse, Shanghai Miha Touring Film Technology Co., Ltd. 2020. Genshin Impact. 4.1. GeForce Now, PlayStation 5, PlayStation 4, Android, Microsoft Windows, iOS.mainland China: HoYoverse, worldwide:Cognosphere Pte. Ltd. -->
-* [Genshin Impact Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki) <!-- OW reference: Fandom. 2023. Genshin Impact Wiki. https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki (Accessed 7 November 2023) -->
-* [Genshin Impact API](https://genshin.dev/) <!-- OW reference: Marvin "NurMarvin" Witt. 2020. Fan-Made Genshin Impact API. https://genshin.dev/ (Accessed 7 November 2023) -->
+MongoDB and, our lecturer Tsungai Katsuro
