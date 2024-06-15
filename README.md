@@ -22,8 +22,6 @@
 ## About the project:
 
 ### Project description:
-As a data-driven developer, my mission was to harness the power of Big Data to create a web application that could analyze and visualize vast data sets in a meaningful way. I eagerly embraced the challenge and explored the world of APIs. Recognizing the overwhelming amount of available information, my goal was to develop an intelligent algorithm that could uncover hidden patterns and connections within the data.
-I carefully selected an API created by GenshinDev, based on the content of the game Genshin Impact by Hoyoverse. With the API in hand, I delved into coding, focusing on efficiently handling large data volumes and creating user-friendly visualizations for data exploration and insights.
 
 ### Built with:
 This project is built with Node.js and React, as well as Javascript and appropriate css. Express.js and MongoDB were also used
