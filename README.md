@@ -21,8 +21,6 @@
 
 ## About the project:
 
-### Project description:
-
 ### Built with:
 This project is built with Node.js and React, as well as Javascript and appropriate css. Express.js and MongoDB were also used
 
